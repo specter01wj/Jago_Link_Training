@@ -1,2 +1,11 @@
-# Jago_Link_Training
-Training for Jago Link
+# Jago Link Training
+
+Training for Jago Link<br/>
+By James(Jin) Wang
+
+
+
+
+
+
+
