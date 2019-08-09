@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shared Scope Directive</title>
+</head>
+<body>
+
+    <div data-ng-app="directivesModule"
+         data-ng-controller="CustomersController">
+
+      <h3>Using controllerAs</h3>
+      <br />
+      <controller-as datasource="customers" add="addCustomer">
+      </controller-as>
+
+
+    </div>
+
+    <script src="../../scripts/angular.js"></script>
+    <script src="../../scripts/directivesController.js"></script>
+    <script src="controllerAs.js"></script>
+</body>
+</html>

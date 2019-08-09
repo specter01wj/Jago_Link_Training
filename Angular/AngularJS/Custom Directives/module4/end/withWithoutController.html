@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="directivesModule">
+    <body>
+        <div ng-app="directivesModule"
+             ng-controller="CustomersController">
+
+          <h3>Without Controller</h3>
+          <without-Controller datasource="customers" add="addCustomer">
+          </without-controller>
+
+          <h3>With Controller</h3>
+          <with-controller datasource="customers" add="addCustomer">
+          </with-controller>
+
+        </div>
+
+        <script src="../../scripts/angular.js"></script>
+        <script src="../../scripts/directivesController.js"></script>
+        <script src="withoutController.js"></script>
+        <script src="withController.js"></script>
+    </body>
+</html>

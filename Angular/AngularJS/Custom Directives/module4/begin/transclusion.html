@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shared Scope Directive</title>
+</head>
+<body>
+
+    <div data-ng-app="directivesModule"
+         data-ng-controller="CustomersController">
+
+      <h3>Directive with Transclusion</h3>
+      <br />
+      <transclusion tasks="tasks">
+
+      </transclusion>
+
+    </div>
+
+    <script src="../../scripts/angular.js"></script>
+    <script src="../../scripts/directivesController.js"></script>
+    <script src="transclusion.js"></script>
+</body>
+</html>

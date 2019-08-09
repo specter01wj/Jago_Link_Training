@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="directivesModule">
+    <body>
+        <div ng-app="directivesModule"
+             ng-controller="CustomersController">
+
+          Parent Scope Customers:
+          <br /><br />
+          <ul><li ng-repeat="cust in customers">{{ cust.name }}</li></ul>
+
+          <h3>Should link() be used?</h3>
+          <use-link-or-not datasource="customers" add="addCustomer">
+          </use-link-or-not>
+
+        </div>
+
+        <script src="../../scripts/angular.js"></script>
+        <script src="../../scripts/directivesController.js"></script>
+        <script src="useLinkOrNot.js"></script>
+    </body>
+</html>

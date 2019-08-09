@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validator Directive</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { margin: 20px; }
+        form { width: 400px; }
+        input.ng-invalid, select.ng-invalid, input.ng-invalid-required, select.ng-invalid.required {
+          border-left: 5px solid #E03930;
+        }
+
+        input.ng-valid, select.ng-valid, input.ng-valid-required, select.ng-valid.required {
+          border-left: 5px solid #57A83F;
+        }
+        .error { background-color: red; color: white; margin-left: 0px; padding: 2px; }
+        [ng-cloak] { display: none !important; }
+
+    </style>
+</head>
+<body>
+
+    <div data-ng-app="directivesModule"
+         data-ng-controller="CustomersController" ng-cloak>
+
+      <h3>Validation Directive</h3>
+      <form name="validatorForm">
+          <div class="form-group">
+              <label>Email:</label>
+              <input type="text" placeholder="test@test.com" class="form-control"
+                     ng-model="email"
+                     name="email" validator="email" />
+              <span class="error form-control"
+                    ng-show="validatorForm.email.$touched && validatorForm.email.$error.invalid">Invalid Email</span>
+          </div>
+
+          <div class="form-group">
+              <label>Phone:</label>
+              <input type="text" placeholder="123-123-1234" class="form-control"
+                     ng-model="phone"
+                     name="phone" validator="phone" />
+              <span class="error form-control"
+                    ng-show="validatorForm.phone.$touched && validatorForm.phone.$error.invalid">Invalid Phone</span>
+          </div>
+          <div class="form-group">
+              <label>Zip Code:</label>
+              <input type="text" placeholder="85002" class="form-control"
+                     ng-model="zipcode"
+                     name="zipcode" validator="zipcode" />
+              <span class="error form-control"
+                    ng-show="validatorForm.zipcode.$touched && validatorForm.zipcode.$error.invalid">Invalid Zip Code</span>
+          </div>
+          <div class="form-group">
+              <label>Arrival Date:</label>
+              <input type="text" placeholder="01/01/2015" class="form-control"
+                     ng-model="date"
+                     name="date" validator="date" />
+              <span class="error form-control"
+                    ng-show="validatorForm.date.$touched && validatorForm.date.$error.invalid">Invalid Date</span>
+          </div>
+
+          <button class="btn btn-success" ng-click="message='Valid!'"
+                  ng-disabled="validatorForm.$invalid || validatorForm.$pristine">Submit</button>
+          &nbsp;&nbsp;<span>{{message}}</span>
+      </form>
+
+    </div>
+
+    <script src="../../scripts/angular.js"></script>
+    <script src="../../scripts/directivesController.js"></script>
+    <script src="validator.js"></script>
+</body>
+</html>
