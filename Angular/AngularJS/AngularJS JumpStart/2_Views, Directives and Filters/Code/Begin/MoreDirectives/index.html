@@ -5,13 +5,16 @@
     <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body 
- ng-init="data={name:'James', isVisible: true, loggedIn: false, status: 'red'}">
-    <div>
-        <div>
-            <div>
+ ng-init="data={name:'James', isVisible: true, loggedIn: true, status: 'red', status_success: 'green'}">
+    <div ng-cloak>
+        <div ng-switch on="data.loggedIn">
+
+            <div ng-switch-when="true" ng-class="data.status_success">
                 Welcome {{ data.name }}
             </div>
-            <div>Login</div>
+
+            <div ng-switch-default ng-class='data.status'>Login</div>
+
         </div>
         <br />
         <div ng-show="data.isVisible">
