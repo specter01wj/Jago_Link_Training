@@ -1,0 +1,129 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="codecraft" >
+<head >
+	<title >Lists Of Things</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="main.css" rel="stylesheet" >
+</head >
+
+<body >
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="container" >
+		<div class="navbar-header" >
+			<a class="navbar-brand"
+			   href="/" >Lists Of Things
+			</a >
+		</div >
+	</div >
+</nav >
+
+<div class="container main-content" ng-controller="PersonsController" >
+
+	<div class="row" >
+		<div class="col-md-12" >
+			<form class="form-inline well well-sm" >
+				<span class="glyphicon glyphicon-search" ></span >
+
+				<div class="form-group" >
+						<input type="text"
+						       class="form-control"
+						       id="name"
+						       ng-model="search"
+						       placeholder="Search name..."
+								/>
+				</div >
+
+				<span class="glyphicon glyphicon-sort-by-attributes" ></span >
+
+				<div class="form-group" >
+					<select class="form-control"
+									ng-model="order">
+						<option value="name" >Name (ASC)</option >
+						<option value="-name" >Name (DEC)</option >
+						<option value="email" >Email (ASC)</option >
+						<option value="-email" >Email (DEC)</option >
+					</select >
+				</div >
+
+			</form >
+		</div >
+	</div >
+
+
+	<div class="row" >
+		<div class="col-md-8" >
+
+			<table class="table table-bordered" >
+
+				<tr >
+					<th >#</th >
+					<th >Name
+						<span ng-click="order = 'name'" class="glyphicon glyphicon-menu-up"></span>
+						<span ng-click="order = '-name'" class="glyphicon glyphicon-menu-down"></span>
+					</th >
+					<th >Email
+						<span ng-click="order = 'email'" class="glyphicon glyphicon-menu-up"></span>
+						<span ng-click="order = '-email'" class="glyphicon glyphicon-menu-down"></span>
+					</th >
+					<th >Birthday</th >
+				</tr >
+
+				<tr ng-repeat="person in filteredPersons = (persons | filter:sensitiveSearch | orderBy:order)"
+				    ng-style="{
+							 'background-color': $index == selectedIndex ? 'lightgray' : ''
+						}"
+				    ng-click="selectPerson(person, $index)" >
+					<td >{{ $index }}</td >
+					<td >{{ person.name }}</td >
+					<td >{{ person.email }}</td >
+					<td >{{ person.birthdate | date:"longDate" }}</td >
+				</tr >
+				<tr ng-show="filteredPersons.length == 0">
+					<td colspan="4">
+						<div class="alert alert-info">
+							<p class="text-center">No results found for search term '{{ search }}'</p>
+						</div>
+					</td>
+				</tr>
+
+
+			</table >
+
+		</div >
+		<div class="col-md-4" >
+
+			<div class="panel panel-default" >
+				<div class="panel-heading" >Details</div >
+				<div class="panel-body" >
+
+					<dl >
+						<dt >Name</dt >
+						<dd >{{selectedPerson.name}}</dd >
+						<dt >Email</dt >
+						<dd >{{selectedPerson.email}}</dd >
+						<dt >Birthday</dt >
+						<dd >{{selectedPerson.birthdate | date:"longDate"}}</dd >
+						<dt >Phonenumber</dt >
+						<dd >{{selectedPerson.phonenumber}}</dd >
+						<dt >Address</dt >
+						<dd >{{selectedPerson.address}}</dd >
+						<dt >City</dt >
+						<dd >{{selectedPerson.city}}</dd >
+						<dt >Country</dt >
+						<dd >{{selectedPerson.country}}</dd >
+					</dl >
+
+				</div >
+			</div >
+
+		</div >
+	</div >
+
+
+</div >
+
+
+<script src="../libs/angular/angular.min.js" ></script >
+<script src="main.js" ></script >
+</body >
+</html >
