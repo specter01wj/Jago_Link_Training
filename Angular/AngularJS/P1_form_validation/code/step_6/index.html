@@ -3,6 +3,7 @@
 <head >
 	<title >Form Submission</title >
 	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="../libs/ladda/dist/ladda-themeless.min.css" rel="stylesheet" >
 	<link href="main.css" rel="stylesheet" >
 </head >
 
@@ -19,17 +20,20 @@
 
 <div class="container main-content" ng-controller="MinMaxCtrl">
 
-	<form name="theForm" ng-submit="onSubmit(theForm.$valid)" novalidate="novalidate" ng-hide="submitted">
+	<form ng-submit="onSubmit()"
+				novalidate="novalidate"
+			  ng-hide="submitted" >
 		<div class="form-group" >
-			<label for="name" >Name</label >
+			<label for="name" class="control-label">Name</label >
 			<input type="text"
 			       class="form-control"
 			       ng-model="formModel.name"
-			       id="name" >
+			       id="name"
+					   required="required" >
 		</div >
 
-		<div class="form-group" >
-			<label for="email" >Email</label >
+		<div class="form-group">
+			<label for="email" class="control-label">Email</label >
 			<input type="email"
 			       class="form-control"
 			       ng-model="formModel.email"
@@ -64,10 +68,11 @@
 		</div >
 
 		<div class="form-group" >
-			<label for="sex" >Sex</label >
-			<select name="sex"
-			        id="sex"
-							class="form-control" ng-model="formModel.sex">
+			<label for="sex" class="control-label">Sex</label >
+			<select id="sex"
+							class="form-control"
+							ng-model="formModel.sex"
+							required="required" >
 				<option value="" >Please Choose</option >
 				<option value="male" >Male</option >
 				<option value="female" >Female</option >
@@ -75,11 +80,13 @@
 		</div >
 
 		<div class="form-group" >
-			<label for="password" >Password</label >
+			<label for="password" class="control-label">Password</label >
 			<input type="password"
 			       class="form-control"
 			       ng-model="formModel.password"
-			       id="password" >
+			       id="password"
+			       required="required"
+						 ng-minlength="10">
 		</div >
 
 		<div class="form-group">
