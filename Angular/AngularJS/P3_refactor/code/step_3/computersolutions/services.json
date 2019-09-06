@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Harware Repair",
+    "description":"Consectetur adipiscing elit. Vestibulum condimentum turpis nec nunc scelerisque convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas id diam enim.",
+    "image": "computer-icon-png-22.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Virus Removal",
+    "description":"Consectetur adipiscing elit. Vestibulum condimentum turpis nec nunc scelerisque convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas id diam enim.",
+    "image": "computer-icon-png-22.jpg"
+  }, 
+  {
+    "id": 3,
+    "name": "System Tuneup",
+    "description":"Consectetur adipiscing elit. Vestibulum condimentum turpis nec nunc scelerisque convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas id diam enim.",
+    "image": "computer-icon-png-22.jpg"
+  }
+]
