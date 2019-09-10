@@ -1,0 +1,53 @@
+<article>
+
+  <div class="template">
+    Here is {{vehicle ? vehicles[2].name : "No Car!"}}!
+    <h4>{{character.name}} details</h4>
+
+    <pre>{{character | json}}</pre>
+
+    <!-- <div class="row" [class.selected]='isSelected'> -->
+    <div class="row" [ngClass]='{selected: isSelected}'> 
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <label class="mdl-textfield__label" for="nametext">Name</label>
+        <input type="text" id="nametext" class="mdl-textfield__input"
+          [value]="character.name"
+          (input)="character.name=$event.target.value">
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <label class="mdl-textfield__label" for="nametext">Color</label>
+        <input type="text" id="nametext" class="mdl-textfield__input"
+          [(ngModel)]="color">
+      </div>
+
+      <div class="row" [style.background]="color" 
+        (mouseenter)="color = '#EE0'"
+        (mouseleave)="color = '#000'">
+        <a href="{{character.link}}" target="_blank">
+          <!-- <img src="{{character.imageUrl}}" style="width:50px"> -->
+          <img 
+            [src]="character.imageUrl" style="width:50px"> 
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised msl-js-ripple-effect mdl-button"
+        [attr.aria-label]='selectLabel'
+        (click)='select(character.name)'>
+        Select
+      </button>
+    </div>
+
+    <div class="row" *ngIf="isSelected">
+      James Wang! You have {{character.name}} to Vehicle.
+      <ul>
+        <li *ngFor="let vehicle of vehicles">{{vehicle.name}}</li>
+      </ul>
+    </div>
+
+  </div>
+  
+</article>
