@@ -14,11 +14,6 @@ export class CharacterListComponent {
     new Character(3, 'BB-8'),
     new Character(4, 'Rey')
   ];
-
-
-
-
-
   
   selectedCharacter: Character;
 
