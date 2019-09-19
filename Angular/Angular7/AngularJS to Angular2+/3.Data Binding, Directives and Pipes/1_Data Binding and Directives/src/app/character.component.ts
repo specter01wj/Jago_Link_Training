@@ -38,8 +38,8 @@ export class CharacterComponent {
       100,
       'Boba Fett',
       'dark',
-      'assets/optimum.jpeg',
-      'http://angular.io'
+      'assets/starscream.jpeg',
+      'http://github.com'
     );
     this.vehicle = new Vehicle(
       10011, 'BMW'

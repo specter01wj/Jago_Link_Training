@@ -9,6 +9,7 @@ export class Character {
 
 @Injectable()
 export class CharacterService {
+	
   constructor(private http: HttpClient) {}
 
   getCharacters(storyId: number) {
