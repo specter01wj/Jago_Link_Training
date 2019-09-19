@@ -16,4 +16,5 @@ import { VehicleService } from './vehicle.service';
   providers: [VehicleService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {}
