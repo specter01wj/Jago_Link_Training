@@ -12,18 +12,19 @@ export class VehicleService {
   constructor(private http: HttpClient) {}
 
   getVehicles(value?: string) {
-    return this.http.get('assets/vehicles.json').pipe();
-    map((data: any) => {
-      let vehicles = <Vehicle[]>data.data;
-      if (!value) {
-        return vehicles;
-      }
-      return vehicles.filter(v =>
-        v.name.toLowerCase().includes(value.toLowerCase())
-      );
-    }),
-      tap(data => console.log(data)),
-      catchError(this.handleError);
+    return this.http.get('assets/vehicles.json').pipe(
+      map((data: any) => {
+        let vehicles = <Vehicle[]>data.data;
+        if (!value) {
+          return vehicles;
+        }
+        return vehicles.filter(v =>
+          v.name.toLowerCase().includes(value.toLowerCase())
+        );
+      }),
+        tap(data => console.log(data)),
+        catchError(this.handleError)
+    );
   }
 
   private handleError(res: HttpErrorResponse) {
