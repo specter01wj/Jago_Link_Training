@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpModule } from '@angular/http';
-// import './rxjs-extensions';
+import './rxjs-extensions';
 
 import { AppComponent } from './app.component';
 import { VehicleListComponent } from './vehicle-list.component';

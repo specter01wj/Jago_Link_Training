@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "rxjs": "6.2.1",
+    "rxjs-compat": "6.0.0",
     "core-js": "2.5.7",
     "zone.js": "0.8.26",
     "@types/node": "8.9.5",
