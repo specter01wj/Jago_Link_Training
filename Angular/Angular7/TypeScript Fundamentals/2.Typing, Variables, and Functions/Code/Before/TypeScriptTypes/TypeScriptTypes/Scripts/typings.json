@@ -1,0 +1,5 @@
+{
+  "ambientDependencies": {
+    "knockout": "github:DefinitelyTyped/DefinitelyTyped/knockout/knockout.d.ts#4de74cb527395c13ba20b438c3a7a419ad931f1c"
+  }
+}

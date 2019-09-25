@@ -1,0 +1,18 @@
+﻿body
+{
+    font-family: 'Segoe UI', sans-serif
+}
+
+span {
+    font-style: italic
+}
+.description {
+    margin: 8px;
+    background-color: lightgray;
+    padding: 8px;
+    border: gray solid thin;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    width: 600px;
+}
