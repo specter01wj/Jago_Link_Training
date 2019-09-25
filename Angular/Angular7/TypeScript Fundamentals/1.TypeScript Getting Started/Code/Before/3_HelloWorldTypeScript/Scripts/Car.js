@@ -1,4 +1,4 @@
-var Car = (function () {
+var Car = /** @class */ (function () {
     function Car(engine) {
         this.engine = engine;
     }
@@ -9,10 +9,9 @@ var Car = (function () {
         alert('Engine stopped: ' + this.engine);
     };
     return Car;
-})();
+}());
 window.onload = function () {
     var car = new Car('V8');
     car.start();
     car.stop();
 };
-//# sourceMappingURL=Car.js.map

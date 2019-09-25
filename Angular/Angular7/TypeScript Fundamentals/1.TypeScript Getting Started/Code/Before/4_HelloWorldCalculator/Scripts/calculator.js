@@ -2,7 +2,7 @@ window.onload = function () {
     var calc = new Calculator();
     calc.init('X', 'Y', 'Output');
 };
-var Calculator = (function () {
+var Calculator = /** @class */ (function () {
     function Calculator() {
     }
     Calculator.prototype.init = function (x, y, output) {
@@ -27,5 +27,4 @@ var Calculator = (function () {
         return x - y;
     };
     return Calculator;
-})();
-//# sourceMappingURL=calculator.js.map
+}());
