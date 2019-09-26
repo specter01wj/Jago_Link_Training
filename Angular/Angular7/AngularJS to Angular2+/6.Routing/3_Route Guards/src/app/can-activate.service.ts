@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -6,6 +7,7 @@ import {
   Router,
   RouterStateSnapshot
 } from '@angular/router';
+
 import { UserProfileService } from './login/user-profile.service';
 
 @Injectable()
