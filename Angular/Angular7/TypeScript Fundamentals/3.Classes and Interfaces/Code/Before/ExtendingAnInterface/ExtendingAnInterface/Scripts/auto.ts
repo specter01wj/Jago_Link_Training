@@ -61,25 +61,25 @@ class Auto {
     accessoryList: string;
 
     // Using Interfaces
-    constructor(basePrice: number, engine: Engine, make: string, model: string, state: string, year: number) {
+/*    constructor(basePrice: number, engine: Engine, make: string, model: string, state: string, year: number) {
         this.engine = engine;
         this.basePrice = basePrice;
         this.state = state;
         this.make = make;
         this.model = model;
         this.year = year;
-    }
+    }*/
 
 
     // Extending an Interface
-    /*constructor(options: IAutoOptions) {
+    constructor(options: IAutoOptions) {
         this.engine = options.engine;
         this.basePrice = options.basePrice;
         this.state = options.state;
         this.make = options.make;
         this.model = options.model;
         this.year = options.year;
-    }*/
+    }
 
     calculateTotal() : number {
         var taxRate = .08;
@@ -119,7 +119,7 @@ class Auto {
 
 
 // Extending an Interface
-/*class Truck extends Auto {
+class Truck extends Auto {
     bedLength: string;
     fourByFour: boolean;
 
@@ -128,19 +128,19 @@ class Auto {
         this.bedLength = options.bedLength;
         this.fourByFour = options.fourByFour;
     }
-}*/
+}
 
 
 window.onload = function () {
 
     // Using Interfaces
-    var auto = new Auto(40000, new Engine(400, 'V12'), 'Ferrari', 'F430', 'NY', 2019);
+    /*var auto = new Auto(40000, new Engine(400, 'V12'), 'Ferrari', 'F430', 'NY', 2019);
     var myEngine = <Engine>auto.engine;
-    alert(myEngine.horsePower.toString());
+    alert(myEngine.horsePower.toString());*/
 
     // Extending an Interface
 
-    /*var truck = new Truck({
+    var truck = new Truck({
         engine: new Engine(250, 'V6'),
         basePrice: 45000,
         state: 'Arizona',
@@ -151,7 +151,7 @@ window.onload = function () {
         fourByFour: true
     });
 
-    alert(truck.bedLength);*/
+    alert(truck.bedLength);
 
 };
 
