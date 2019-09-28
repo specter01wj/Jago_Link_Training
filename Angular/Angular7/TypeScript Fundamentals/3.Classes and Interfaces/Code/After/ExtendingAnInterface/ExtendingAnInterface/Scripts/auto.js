@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Engine = /** @class */ (function () {
     function Engine(horsePower, engineType) {
         this.horsePower = horsePower;
@@ -41,23 +54,23 @@ var Accessory = /** @class */ (function () {
 }());
 var Auto = /** @class */ (function () {
     // Using Interfaces
-    function Auto(basePrice, engine, make, model, state, year) {
-        this.engine = engine;
-        this.basePrice = basePrice;
-        this.state = state;
-        this.make = make;
-        this.model = model;
-        this.year = year;
-    }
+    /*    constructor(basePrice: number, engine: Engine, make: string, model: string, state: string, year: number) {
+            this.engine = engine;
+            this.basePrice = basePrice;
+            this.state = state;
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        }*/
     // Extending an Interface
-    /*constructor(options: IAutoOptions) {
+    function Auto(options) {
         this.engine = options.engine;
         this.basePrice = options.basePrice;
         this.state = options.state;
         this.make = options.make;
         this.model = options.model;
         this.year = options.year;
-    }*/
+    }
     Auto.prototype.calculateTotal = function () {
         var taxRate = .08;
         return this.basePrice + (taxRate * this.basePrice);
@@ -103,23 +116,23 @@ var Auto = /** @class */ (function () {
     return Auto;
 }());
 // Extending an Interface
-/*class Truck extends Auto {
-    bedLength: string;
-    fourByFour: boolean;
-
-    constructor(options: ITruckOptions) {
-        super(options);
-        this.bedLength = options.bedLength;
-        this.fourByFour = options.fourByFour;
+var Truck = /** @class */ (function (_super) {
+    __extends(Truck, _super);
+    function Truck(options) {
+        var _this = _super.call(this, options) || this;
+        _this.bedLength = options.bedLength;
+        _this.fourByFour = options.fourByFour;
+        return _this;
     }
-}*/
+    return Truck;
+}(Auto));
 window.onload = function () {
     // Using Interfaces
-    var auto = new Auto(40000, new Engine(400, 'V12'), 'Ferrari', 'F430', 'NY', 2019);
-    var myEngine = auto.engine;
-    alert(myEngine.horsePower.toString());
+    /*var auto = new Auto(40000, new Engine(400, 'V12'), 'Ferrari', 'F430', 'NY', 2019);
+    var myEngine = <Engine>auto.engine;
+    alert(myEngine.horsePower.toString());*/
     // Extending an Interface
-    /*var truck = new Truck({
+    var truck = new Truck({
         engine: new Engine(250, 'V6'),
         basePrice: 45000,
         state: 'Arizona',
@@ -129,6 +142,5 @@ window.onload = function () {
         bedLength: 'Short bed',
         fourByFour: true
     });
-
-    alert(truck.bedLength);*/
+    alert(truck.bedLength);
 };
