@@ -1,5 +1,4 @@
 /// <reference path="typings/knockout.d.ts" />
-// namespace is the preferred keyword over module
 var demo_02_04;
 (function (demo_02_04) {
     var name = ko.observable('John Papa');
