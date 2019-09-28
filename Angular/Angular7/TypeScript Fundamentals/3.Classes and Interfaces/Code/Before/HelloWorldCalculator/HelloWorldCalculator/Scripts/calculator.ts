@@ -1,8 +1,8 @@
 window.onload = function () {
-    var calc = new CalculatorjQuery('X','Y','Output');
+    var calc = new Calculator('X','Y','Output');
 };
 
-class CalculatorjQuery {
+class Calculator {
     private x : HTMLInputElement;
     private y : HTMLInputElement;
     private output : HTMLSpanElement;

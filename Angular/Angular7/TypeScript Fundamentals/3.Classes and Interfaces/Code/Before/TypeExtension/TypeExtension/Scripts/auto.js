@@ -1,3 +1,8 @@
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var Engine = (function () {
     function Engine(horsePower, engineType) {
         this.horsePower = horsePower;
@@ -75,8 +80,20 @@ var Auto = (function () {
     });
     return Auto;
 })();
+var Truck = (function (_super) {
+    __extends(Truck, _super);
+    function Truck(basePrice, engine, make, model, bedLength, fourByFour) {
+        _super.call(this, basePrice, engine, make, model);
+        this.bedLength = bedLength;
+        this.fourByFour = fourByFour;
+    }
+    return Truck;
+})(Auto);
 window.onload = function () {
-    var auto = new Auto(40000, new Engine(300, 'V8'), 'Chevy', 'Silverado');
-    alert(auto.engine.engineType);
+    var truck = new Truck(40000, new Engine(300, 'V8'), 'Chevy', 'Silverado', 'Long Bed', true);
+    truck.addAccessories(new Accessory(1234, 'Sunroof'), new Accessory(4321, 'Towing package'));
+    truck.engine.start(function (status, engineType) {
+        alert(engineType + ' was started');
+    });
 };
 //# sourceMappingURL=auto.js.map

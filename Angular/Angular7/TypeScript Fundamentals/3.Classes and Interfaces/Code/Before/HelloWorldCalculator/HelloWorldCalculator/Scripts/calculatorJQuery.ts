@@ -1,10 +1,10 @@
-///<reference path="jquery.d.ts" />
+/// <reference path="jquery.d.ts" />
 
 $(document).ready(function () {
-    var calc = new Calculator('X','Y','Output');
+    var calc = new CalculatorJQuery('X','Y','Output');
 });
 
-class Calculator {
+class CalculatorJQuery {
     private x : JQuery;
     private y : JQuery;
     private output : JQuery;

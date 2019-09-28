@@ -22,6 +22,21 @@ var Engine = (function () {
     };
     return Engine;
 })();
+var CustomEngine = (function () {
+    function CustomEngine() {
+    }
+    CustomEngine.prototype.start = function (callback) {
+        window.setTimeout(function () {
+            callback(true, 'Custom Engine');
+        }, 1000);
+    };
+    CustomEngine.prototype.stop = function (callback) {
+        window.setTimeout(function () {
+            callback(true, 'Custom Engine');
+        }, 1000);
+    };
+    return CustomEngine;
+})();
 var Accessory = (function () {
     function Accessory(accessoryNumber, title) {
         this.accessoryNumber = accessoryNumber;
@@ -30,13 +45,13 @@ var Accessory = (function () {
     return Accessory;
 })();
 var Auto = (function () {
-    function Auto(basePrice, engine, make, model, state, year) {
-        this.engine = engine;
-        this.basePrice = basePrice;
-        this.state = state;
-        this.make = make;
-        this.model = model;
-        this.year = year;
+    function Auto(options) {
+        this.engine = options.engine;
+        this.basePrice = options.basePrice;
+        this.state = options.state;
+        this.make = options.make;
+        this.model = options.model;
+        this.year = options.year;
     }
     Auto.prototype.calculateTotal = function () {
         var taxRate = .08;
@@ -84,22 +99,24 @@ var Auto = (function () {
 })();
 var Truck = (function (_super) {
     __extends(Truck, _super);
-    function Truck(basePrice, engine, make, model, state, year, bedLength, fourByFour) {
-        _super.call(this, basePrice, engine, make, model, state, year);
-        this.bedLength = bedLength;
-        this.fourByFour = fourByFour;
+    function Truck(options) {
+        _super.call(this, options);
+        this.bedLength = options.bedLength;
+        this.fourByFour = options.fourByFour;
     }
     return Truck;
 })(Auto);
 window.onload = function () {
-    //var auto = new Auto({
-    //    engine: new Engine(250, 'V6'),
-    //    basePrice: 45000,
-    //    state: 'Arizona',
-    //    make: 'Ford',
-    //    model: 'F-150',
-    //    year: 2013
-    //});
-    //alert(auto.engine.horsePower.toString());
+    var truck = new Truck({
+        engine: new Engine(250, 'V6'),
+        basePrice: 45000,
+        state: 'Arizona',
+        make: 'Ford',
+        model: 'F-150',
+        year: 2013,
+        bedLength: 'Short bed',
+        fourByFour: true
+    });
+    alert(truck.bedLength);
 };
 //# sourceMappingURL=auto.js.map
