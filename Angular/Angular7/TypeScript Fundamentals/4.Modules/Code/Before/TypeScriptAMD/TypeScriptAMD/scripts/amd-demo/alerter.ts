@@ -8,7 +8,7 @@ export interface IAlerter {
 }
 
 export class Alerter implements IAlerter {
-    name = 'John';
+    name = 'James';
     showMessage() {
         var msg = dataservice.getMessage();
         alert(msg + ', ' + this.name);
