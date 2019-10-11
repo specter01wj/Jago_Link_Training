@@ -1,0 +1,12 @@
+Assignment: List of Authors
+
+Use what you've learned in this section to display the list of authors.
+
+
+1. create a new component, named "authors"
+2. create a new service, named "aurhots service"
+2. use authors array to display authors:
+["Brian Aldiss", "Rochelle Alers", "Lloyd Alexander", "Charlotte Vale Allen", "Isabel Allende", "David Almond", "Catherine Anderson", "Maya Angelou"]
+
+
+
