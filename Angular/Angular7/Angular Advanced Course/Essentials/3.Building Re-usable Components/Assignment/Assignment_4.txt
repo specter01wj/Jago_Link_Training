@@ -5,3 +5,7 @@ Build a re-usable "like" component, like the one you see on Twitter.
 
 Questions for this assignment
 What is the proper way to define an input property called "likesCount"?
+
+@Input('likesCount') likesCount: number;
+
+
