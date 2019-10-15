@@ -1,11 +1,23 @@
-Assignment: Like Component
+Assignment: ZippyComponent
 
-Build a re-usable "like" component, like the one you see on Twitter.
+Build a re-usable zippy component.
+
+
+html:
+
+<zippy title="Shipping Details">
+	Shipping Details Content
+</zippy>
+<zippy title="Billing Details">
+	Billing Details Content
+</zippy>
+
 
 
 Questions for this assignment
-What is the proper way to define an input property called "likesCount"?
+There are 2 ways to add/remove classes to DOM elements dynamically. What are they?
 
-@Input('likesCount') likesCount: number;
+Using class binding and ngClass directive.
+
 
 
