@@ -5,5 +5,48 @@ Use what you've learned in this section to convert the input into Title Casing.
 
 Questions for this assignment
 1. What access modifier do we use for methods that are internal to a class and should not be visible from the outside?
+private class
 
 
+solution:
+
+(html):
+<div>
+	<input [(ngModel)]="inputTitleCase" type="text" /> <br/>
+	{{ inputTitleCase | titlecasePipe }}
+</div>
+
+(ts):
+export class TitlecasePipePipe implements PipeTransform {
+
+  transform(value: string, ...args: any[]): any {
+    if (!value) return null;
+
+    let words = value.split(' ');
+
+    for (var i = 0; i < words.length; i++) {
+      let word = words[i];
+      
+      if (i > 0 && this.isPreposition(word))
+        words[i] = word.toLowerCase();
+      else 
+        words[i] = this.toTitleCase(word);
+    }
+
+    return words.join(' ');
+  }
+
+  private toTitleCase(word: string): string {
+    return word.substr(0, 1).toUpperCase() + word.substr(1).toLowerCase();
+  }
+
+  private isPreposition(word: string): boolean {
+    let prepositions = [
+      'of',
+      'the'
+    ];
+
+    return prepositions.includes(word.toLowerCase());
+  }
+
+}
