@@ -1,0 +1,23 @@
+Assignment: ZippyComponent
+
+Build a re-usable zippy component.
+
+
+html:
+
+<zippy title="Shipping Details">
+	Shipping Details Content
+</zippy>
+<zippy title="Billing Details">
+	Billing Details Content
+</zippy>
+
+
+
+Questions for this assignment
+There are 2 ways to add/remove classes to DOM elements dynamically. What are they?
+
+Using class binding and ngClass directive.
+
+
+
