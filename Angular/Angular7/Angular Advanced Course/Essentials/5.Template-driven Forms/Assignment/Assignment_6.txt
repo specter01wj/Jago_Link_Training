@@ -1,6 +1,6 @@
-Assignment: ZippyComponent
+Assignment: Course Form
 
-Build a re-usable zippy component.
+Build a form for Udemy instructors to create a new course.
 
 
 html:
@@ -15,9 +15,9 @@ html:
 
 
 Questions for this assignment
-There are 2 ways to add/remove classes to DOM elements dynamically. What are they?
+How can we bind the selected value of a drop-down list to a complex object?
 
-Using class binding and ngClass directive.
+[ngValue]="someObject"
 
 
 
