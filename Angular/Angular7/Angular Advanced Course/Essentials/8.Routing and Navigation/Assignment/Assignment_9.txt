@@ -3,10 +3,5 @@ Assignment: Blog Archives
 Implement the routing for a blogging engine.
 
 
-Questions for this assignment
-How can we bind the selected value of a drop-down list to a complex object?
-
-[ngValue]="someObject"
-
 
 
