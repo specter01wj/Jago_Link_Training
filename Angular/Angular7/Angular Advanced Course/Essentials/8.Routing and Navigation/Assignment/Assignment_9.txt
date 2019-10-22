@@ -1,6 +1,6 @@
-Assignment: Course Form
+Assignment: Blog Archives
 
-Build a form for Udemy instructors to create a new course.
+Implement the routing for a blogging engine.
 
 
 Questions for this assignment
