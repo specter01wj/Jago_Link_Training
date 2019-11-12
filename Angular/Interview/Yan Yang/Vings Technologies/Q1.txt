@@ -1,0 +1,43 @@
+Vings Technologies 
+
+Difference between AngularJS and Angular2 
+
+Module 
+
+Controller to Components 
+
+Removed the need for directive 
+
+Service 
+
+Dependency Injection 
+
+ 
+
+The key components of Angular 2 
+
+Module 
+
+Component 
+
+Service 
+
+Metadata 
+
+Template 
+
+ 
+
+How many files will generate when create a component in angular 2 
+
+Ng generate ? 
+
+ 
+
+How to create a customer directive on angular 2? 
+
+Use component.  
+
+
+
+
