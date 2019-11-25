@@ -1,6 +1,6 @@
 Vings Technologies 
 
-Difference between AngularJS and Angular2 
+1. Difference between AngularJS and Angular2 
 
 Module 
 
@@ -14,7 +14,7 @@ Dependency Injection
 
  
 
-The key components of Angular 2 
+2. The key components of Angular 2 
 
 Module 
 
@@ -28,13 +28,13 @@ Template
 
  
 
-How many files will generate when create a component in angular 2 
+3. How many files will generate when create a component in angular 2 
 
 Ng generate ? 
 
  
 
-How to create a customer directive on angular 2? 
+4. How to create a customer directive on angular 2? 
 
 Use component.  
 
