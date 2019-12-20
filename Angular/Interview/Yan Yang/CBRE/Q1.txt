@@ -1,31 +1,7 @@
-Cognizant
+CBRE
 
-1. Constructor 和 onint() function 的区别  -----在两个中定义同一个变量这两个变量的区别 
+1. 
 
- 
 
-2. Angular 4 和 Angular 6的区别  
-
- 
-
-3. Component 之间怎么交流 -----是child的话怎么交流 没有任何关系的话怎么交流 
-
-4. Customer Directive 和 Component 之间的区别， 什么时候会建customer directive 
-
-5. Observable 和 promise 的区别 
-
-6. 两个service 同时import 进一个component 其中一个service  don't responsible how to check it and how to know which one is not responsible  
-
-7. 一个global css 和一个Local的css  component 会先用哪个css？ 
-
- 
-
-8. 怎么loading 一个JS file 进angular? 
-
-9. What is "#" meaning in angular 
-
-10. What is AOT 
-
-11. 有个问题没弄太明白，一个global css file 和一个  local  css file with compont1 名字一样, 其他的component 直接是用的global 的，怎么可以用这个Local的？ 我当时没听明白，他说了好多遍，就过了 
 
 
