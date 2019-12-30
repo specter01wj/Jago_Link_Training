@@ -1,0 +1,37 @@
+1.how to create component in angular
+Import Component Decorator from '@angular/core'
+Use Decorator and Add Metadata
+Specify Template:  Inline Template(less than 3 lines)/ External Template File
+Add Styles: Inline/External Style File(s)
+Export the Component:The component also needs to be a part of a module. So make sure that you add it as a declaration of a NgModule.
+
+ng generate component <name>
+
+2. how to transpass date between components
+
+parent to child: @input
+child to parent: ViewChild(), @output
+unrelated components: service
+
+3. difference between angular 1 and angular 2
+
+AngularJS is based on JavaScript but Angular 2 uses TypeScript which is a superset of JavaScript.
+The architecture of AngularJS is based on MVC but the architecture of Angular 2 is based on service/controller.
+
+4.ngclass, ng bind data
+
+ngclass:Adds and removes CSS classes on an HTML element. String, Array, Object.
+
+data binding: 
+Template Expression {{}} double curly braces
+This is the one-way binding of a component’s property to the template 
+of the component. So, when the property in the components changes, the template is updated to reflect the new 
+changes.
+Property Binding []square brackets
+This a one-way binding of a Model’s data to the binding target.The binding target can be element properties, 
+components properties or directives directives properties.
+
+5.angular testing tool
+using Jasmine test framework.
+using CLI ng test to build the app in watch mode, and launches the Karma test runner.
+You can modify many options by editing the karma.conf.js and the test.ts files in the src/ folder.
