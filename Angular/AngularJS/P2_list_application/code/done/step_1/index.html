@@ -1,0 +1,47 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="codecraft" >
+<head >
+	<title >Lists Of Things</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="main.css" rel="stylesheet" >
+</head >
+
+<body >
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="container" >
+		<div class="navbar-header" >
+			<a class="navbar-brand"
+			   href="/" >Lists Of Things
+			</a >
+		</div >
+	</div >
+</nav >
+
+<div class="container main-content" ng-controller="PersonsController">
+
+	<table class="table table-bordered">
+
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Birthday</th>
+		</tr>
+
+		<tr ng-repeat="person in persons">
+			<td>{{ $index }}</td>
+			<td>{{ person.name }}</td>
+			<td>{{ person.email }}</td>
+			<td>{{ person.birthdate | date:"longDate" }}</td>
+		</tr>
+
+
+	</table>
+
+</div >
+
+
+<script src="../libs/angular/angular.min.js" ></script >
+<script src="main.js" ></script >
+</body >
+</html >
