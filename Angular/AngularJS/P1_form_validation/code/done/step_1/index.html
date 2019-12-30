@@ -1,0 +1,85 @@
+<!DOCTYPE html >
+<html lang="en" ng-app>
+<head >
+	<title >Form Submission</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="main.css" rel="stylesheet" >
+</head >
+
+<body >
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="container" >
+		<div class="navbar-header" >
+			<a class="navbar-brand"
+			   href="/" >Form Submitting
+			</a >
+		</div >
+	</div >
+</nav >
+
+<div class="container main-content" >
+
+	<form >
+		<div class="form-group" >
+			<label for="name" >Name</label >
+			<input type="text"
+			       class="form-control"
+			       id="name" >
+		</div >
+
+		<div class="form-group" >
+			<label for="email" >Email</label >
+			<input type="email"
+			       class="form-control"
+			       id="email" >
+		</div >
+
+		<div class="form-group" >
+			<label for="username" >Username</label >
+			<input type="text"
+			       class="form-control"
+			       id="username" >
+		</div >
+
+		<div class="form-group" >
+			<label for="age" >Age</label >
+			<input type="number"
+			       class="form-control"
+			       id="age" >
+		</div >
+
+		<div class="form-group" >
+			<label for="sex" >Sex</label >
+			<select name="sex"
+			        id="sex"
+							class="form-control" >
+				<option value="" >Please Choose</option >
+				<option value="male" >Male</option >
+				<option value="female" >Female</option >
+			</select >
+		</div >
+
+		<div class="form-group" >
+			<label for="password" >Password</label >
+			<input type="password"
+			       class="form-control"
+			       id="password" >
+		</div >
+
+		<div class="form-group">
+			<button class="btn btn-primary" >Register
+			</button>
+		</div>
+
+	</form >
+
+
+</div >
+
+
+<script src="../libs/angular/angular.min.js" ></script >
+<script src="main.js" ></script >
+
+
+</body >
+</html >
