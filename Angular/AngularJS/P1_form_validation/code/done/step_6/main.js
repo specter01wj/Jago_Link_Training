@@ -10,23 +10,23 @@ app.run(function(defaultErrorMessageResolver){
 
 app.controller('MinMaxCtrl', function ($scope, $http) {
 	$scope.formModel = {};
-	$scope.subtmitting = false;
+	$scope.submitting = false;
 	$scope.submitted = false;
 	$scope.has_error = false;
 
 
 	$scope.onSubmit = function () {
-		$scope.subtmitting = true;
+		$scope.submitting = true;
 
 		$http.post('https://minmax-server.herokuapp.com/register/', $scope.formModel).
 			success(function (data) {
 				console.log(":)");
-				$scope.subtmitting = false;
+				$scope.submitting = false;
 				$scope.submitted = true;
 				$scope.has_error = false;
 			}).error(function(data) {
 				console.log(":(");
-				$scope.subtmitting = false;
+				$scope.submitting = false;
 				$scope.submitted = false;
 				$scope.has_error = true;
 			});
