@@ -70,6 +70,7 @@
 		]
 	},
 	{
+		"id" : 6,
 		"name":"Green Wordpress Theme",
 "description":"Consectetur adipiscing elit. Vestibulum condimentum turpis nec nunc scelerisque convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas id diam enim.",		"type": "wordpress",
 		"price": 15.99,
