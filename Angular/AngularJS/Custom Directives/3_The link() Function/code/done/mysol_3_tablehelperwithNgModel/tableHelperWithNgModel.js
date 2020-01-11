@@ -166,7 +166,6 @@
           restrict: 'E',
           require: 'ngModel',
           scope: {
-            datasource: '=',
             columnmap: '='
           },
           link: link,
