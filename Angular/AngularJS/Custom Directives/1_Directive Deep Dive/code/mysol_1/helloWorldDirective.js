@@ -4,7 +4,7 @@
 
 	app.directive('helloWorld', function() {
 		return {
-			template: "Hello World"
+			template: "<h2>Hello World</h2>"
 		}
 	});
 
