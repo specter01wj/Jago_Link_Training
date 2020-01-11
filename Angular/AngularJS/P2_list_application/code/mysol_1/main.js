@@ -2,15 +2,25 @@ var app = angular.module('codecraft', []);
 
 app.controller('PersonsController', function ($scope) {
 
-	$scope.selectedIndex = null;
+	$scope.filteredPersons = null;
+	// $scope.selectedIndex = null;
 	$scope.selectedPerson = null;
 
-	// $scope.search = "";
-	$scope.search = {};
+	$scope.search = "";
+	// $scope.search = {};
+	$scope.order = "email";
 
-	$scope.selectPerson = function(person, index) {
-		$scope.selectedIndex = index;
+	$scope.selectPerson = function(person) {
+		// $scope.selectedIndex = index;
 		$scope.selectedPerson = person;
+	}
+
+	$scope.sensitiveSearch = function(person) {
+		if($scope.search) {
+			return person.name.indexOf($scope.search) == 0 || 
+				person.email.indexOf($scope.search) == 0;
+		}
+		return true;
 	}
 
 	$scope.persons = [

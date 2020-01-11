@@ -1,0 +1,15 @@
+<!doctype html>
+<html ng-app="directivesModule">
+    <body ng-controller="CustomersController">
+        
+    	<h1>Isolate Scope Directive with @ String</h1>
+    	<isolate-scope-with-string name="{{ customer.name }}" street="{{ customer.street }}"></isolate-scope-with-string>
+
+
+        <script src="../libs/angular.js"></script>
+        <script src="../libs/directivesController.js"></script>
+
+        <script src="isolateScopeWithStringDirective.js"></script>
+        
+    </body>
+</html>

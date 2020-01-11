@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html data-ng-app="directivesModule">
+<head>
+    <title>Delay Bind Directive</title>
+    <style>
+       li { background-color: #efefef; width:400px; margin:10px;}
+       a { text-decoration: none; color: blue; }
+       .ng-cloak, [ng-cloak] { display:none !important; }
+    </style>
+</head>
+<body ng-cloak>
+
+    <div data-ng-controller="CustomersController">
+
+      <h3>Delay Bind Directive</h3>
+      The delay-bind directive will cause attribute values to be loaded when a specific trigger
+      (such as mouseenter) fires.
+      <div>
+          <ul>
+             <li ng-repeat="cust in customers"
+                 delay-bind="{{::cust.street}}"
+                 attribute="title"
+                 trigger="mouseenter">
+
+                 <a delay-bind="{{::cust.url}}"
+                    attribute="href"
+                    trigger="mouseenter">
+                    {{cust.name}}
+                 </a>
+
+             </li>
+          </ul>
+          <div>Total Customers: {{::customers.length}}</div>
+      </div>
+
+    </div>
+
+    <script src="../../scripts/angular.js"></script>
+    <script src="../../scripts/directivesController.js"></script>
+    <script src="delayBindWithCompile.js"></script>
+</body>
