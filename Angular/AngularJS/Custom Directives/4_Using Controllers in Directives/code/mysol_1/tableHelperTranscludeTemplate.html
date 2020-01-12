@@ -1,0 +1,13 @@
+<div>
+     <table>
+         <thead>
+             <tr ng-transclude></tr>
+         </thead>
+         <tbody>
+             <tr ng-repeat="row in vm.datasource | orderBy:vm.orderby:vm.reverse">
+                 <td ng-repeat="value in vm.getRowValues(row)">{{value}}</td>
+             </tr>
+         </tbody>
+    </table>
+    <br /><div class="rowCount">{{vm.datasource.length}} rows</div>
+</div>

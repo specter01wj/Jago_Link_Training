@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controller Passing a Parameter</title>
+</head>
+<body>
+
+    <div data-ng-app="directivesModule"
+         data-ng-controller="CustomersController">
+
+      Parent Scope Customers:
+      <br /><br />
+      <ul><li ng-repeat="cust in customers">{{ cust.name }}</li></ul>
+
+      <h3>Passing Parameters out of a Directive Controller</h3>
+      Example 1: <div controller-passing-parameter1 datasource="customers"></div>
+      <br /><br />
+      Example 2: <div controller-passing-parameter2 datasource="customers"></div>
+
+    </div>
+
+    <script src="../../scripts/angular.js"></script>
+    <script src="../../scripts/directivesController.js"></script>
+    <script src="controllerPassingParameter1.js"></script>
+    <script src="controllerPassingParameter2.js"></script>
+</body>
+</html>
