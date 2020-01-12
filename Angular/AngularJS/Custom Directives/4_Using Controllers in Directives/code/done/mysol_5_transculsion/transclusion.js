@@ -15,7 +15,7 @@
             if (!vm.tasks) vm.tasks = [];
 
             vm.tasks.push({
-                title: vm.title
+               title: vm.title
             });
 
           };
