@@ -25,7 +25,7 @@
           restrict: 'E',
           transclude: true,
           scope: {
-            tasks: '='
+              tasks: '='
           },
           controller: controller,
           controllerAs: 'vm',
