@@ -16,7 +16,7 @@
 
             vm.tasks.push({
                 title: vm.title
-              });
+             });
 
           };
       };
