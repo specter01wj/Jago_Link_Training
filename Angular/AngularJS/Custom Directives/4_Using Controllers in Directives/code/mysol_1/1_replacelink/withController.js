@@ -2,9 +2,25 @@
 
   var withController = function () {
 
-    var template = '<button ng-click="addItem()">Add Item</button><ul>' +
-                 '<li ng-repeat="item in items">{{ ::item.name }}</li></ul>',
+      var template = '<button ng-click="addItem()">Add Item</button><ul>' +
+                 '<li ng-repeat="item in items">{{ ::item.name }}</li></ul>';
 
+      var controller = ['$scope', function($scope){
+
+
+          init();
+
+          function init() {
+              $scope.items = angular.copy($scope.datasource);
+          }
+
+          $scope.addItem = function() {
+              var name = "James";
+              $scope.add()(name);
+              $scope.items.push({
+                name: name
+              })
+          }
 
       }];
 
@@ -14,7 +30,7 @@
               datasource: '=',
               add: '&',
           },
-
+          controller: controller,
           template: template
       };
   };

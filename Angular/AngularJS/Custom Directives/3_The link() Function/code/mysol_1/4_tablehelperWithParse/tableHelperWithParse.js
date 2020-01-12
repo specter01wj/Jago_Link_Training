@@ -1,6 +1,6 @@
 (function() {
 
-  var tableHelper = function () {
+  var tableHelperWithParse = ['$parse', function ($parse) {
 
       var template = '<div class="tableHelper"></div>',
 
@@ -11,11 +11,15 @@
               table = '',
               visibleProps = [],
               sortCol = null,
-              sortDir = 1;
+              sortDir = 1,
+              columnmap = null;
 
-          //Watch for changes to the collection so that the table gets
-          //re-rendered as necessary
+          //Watch for changes to the collection so that the table gets re-rendered as necessary
           scope.$watchCollection('datasource', render);
+
+          // columnmap = scope.$eval(attrs.columnmap);
+          columnmap = $parse(attrs.columnmap)();
+
           wireEvents();
 
           function render() {
@@ -31,7 +35,7 @@
               element.on('click', function(event) {
                  if (event.srcElement.nodeName === 'TH') {
                      var val = event.srcElement.innerHTML;
-                     var col = (scope.columnmap) ? getRawColumnName(val) : val;
+                     var col = (columnmap) ? getRawColumnName(val) : val;
                      if (col) sort(col);
                  }
               });
@@ -89,7 +93,7 @@
 
           function getRawColumnName(friendlyCol) {
               var rawCol;
-              scope.columnmap.forEach(function(colMap) {
+              columnmap.forEach(function(colMap) {
                   for (var prop in colMap) {
                       if (colMap[prop] === friendlyCol) {
                          rawCol = prop;
@@ -102,7 +106,7 @@
           }
 
           function filterColumnMap(prop) {
-              var val = scope.columnmap.filter(function(map) {
+              var val = columnmap.filter(function(map) {
                   if (map[prop]) {
                       return true;
                   }
@@ -112,7 +116,7 @@
           }
 
           function getColumnName(prop) {
-              if (!scope.columnmap) return prop;
+              if (!columnmap) return prop;
               var val = filterColumnMap(prop);
               if (val && val.length && !val[0].hidden) return val[0][prop];
               else return null;
@@ -123,15 +127,14 @@
       return {
           restrict: 'E',
           scope: {
-            columnmap: '=',
             datasource: '='
           },
           link: link,
           template: template
       };
-  };
+  }];
 
   angular.module('directivesModule')
-    .directive('tableHelper', tableHelper);
+    .directive('tableHelperWithParse', tableHelperWithParse);
 
 }());

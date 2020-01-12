@@ -1,39 +1,61 @@
 (function() {
 
-  var tableHelperWithParse = ['$parse', function ($parse) {
+  var tableHelperWithNgModel = function () {
 
       var template = '<div class="tableHelper"></div>',
 
-      link = function(scope, element, attrs) {
+      //ngModel object will be passed in due to require: 'ngModel' in DDO below
+      link = function(scope, element, attrs, ngModel) {
           var headerCols = [],
               tableStart = '<table>',
               tableEnd = '</table>',
               table = '',
               visibleProps = [],
+              datasource,
               sortCol = null,
-              sortDir = 1,
-              columnmap = null;
+              sortDir = 1;
 
-          //Watch for changes to the collection so that the table gets re-rendered as necessary
-          scope.$watchCollection('datasource', render);
+          //Watch for ngModel to change. Required since the $modelValue
+          //will be NaN initially
+
+          /*attrs.$observe('ngModel', function(value) {
+            scope.$watch(value, function(newval) {
+              render();
+            });
+          });*/
+
+          // scope.$watch(attrs.ngModel, render);
+
+          /*scope.$watch(function() {
+            return attrs.ngModel;
+          }, function(newval) {
+            render();
+          });*/
+
+          ngModel.$render = function() {
+            render();
+          };
 
 
           wireEvents();
 
           function render() {
-              if (scope.datasource && scope.datasource.length) {
-                  table += tableStart;
-                  table += renderHeader();
-                  table += renderRows() + tableEnd;
-                  renderTable();
-              }
+
+            if(ngModel && ngModel.$modelValue.length) {
+              datasource = ngModel.$modelValue;
+              table += tableStart;
+              table += renderHeader();
+              table += renderRows() + tableEnd;
+              renderTable();
+            }
+              
           }
 
           function wireEvents() {
               element.on('click', function(event) {
                  if (event.srcElement.nodeName === 'TH') {
                      var val = event.srcElement.innerHTML;
-                     var col = (columnmap) ? getRawColumnName(val) : val;
+                     var col = (scope.columnmap) ? getRawColumnName(val) : val;
                      if (col) sort(col);
                  }
               });
@@ -44,7 +66,7 @@
               //If they did then reverse the sort
               if (sortCol === col) sortDir = sortDir * -1;
               sortCol = col;
-              scope.datasource.sort(function(a,b) {
+              datasource.sort(function(a,b) {
                  if (a[col] > b[col]) return 1 * sortDir;
                  if (a[col] < b[col]) return -1 * sortDir;
                  return 0;
@@ -54,7 +76,7 @@
 
           function renderHeader() {
                var tr = '<tr>';
-               for (var prop in scope.datasource[0]) {
+               for (var prop in datasource[0]) {
                    var val = getColumnName(prop);
                    if (val) {
                        //Track visible properties to make it fast to check them later
@@ -69,9 +91,9 @@
 
           function renderRows() {
                var rows = '';
-               for (var i = 0, len = scope.datasource.length; i < len; i++) {
+               for (var i = 0, len = datasource.length; i < len; i++) {
                     rows += '<tr>';
-                    var row = scope.datasource[i];
+                    var row = datasource[i];
                     for (var prop in row) {
                         if (visibleProps.indexOf(prop) > -1) {
                             rows += '<td>' + row[prop] + '</td>';
@@ -84,14 +106,28 @@
           }
 
           function renderTable() {
-              table += '<br /><div class="rowCount">' + scope.datasource.length + ' rows</div>';
+              table += '<br /><div class="rowCount">' + datasource.length + ' rows</div>';
               element.html(table);
               table = '';
           }
 
           function getRawColumnName(friendlyCol) {
               var rawCol;
-              columnmap.forEach(function(colMap) {
+              scope.columnmap.forEach(function(colMap) {
+                  for (var prop in colMap) {
+                      if (colMap[prop] === friendlyCol) {
+                         rawCol = prop;
+                         break;
+                      }
+                  }
+                  return null;
+              });
+              return rawCol;
+          }
+
+          function getRawColumnName(friendlyCol) {
+              var rawCol;
+              scope.columnmap.forEach(function(colMap) {
                   for (var prop in colMap) {
                       if (colMap[prop] === friendlyCol) {
                          rawCol = prop;
@@ -104,7 +140,7 @@
           }
 
           function filterColumnMap(prop) {
-              var val = columnmap.filter(function(map) {
+              var val = scope.columnmap.filter(function(map) {
                   if (map[prop]) {
                       return true;
                   }
@@ -114,7 +150,7 @@
           }
 
           function getColumnName(prop) {
-              if (!columnmap) return prop;
+              if (!scope.columnmap) return prop;
               var val = filterColumnMap(prop);
               if (val && val.length && !val[0].hidden) return val[0][prop];
               else return null;
@@ -124,15 +160,17 @@
 
       return {
           restrict: 'E',
+          require: 'ngModel',
           scope: {
-            datasource: '='
+            // datasource: '=',
+            columnmap: '='
           },
           link: link,
           template: template
       };
-  }];
+  };
 
   angular.module('directivesModule')
-    .directive('tableHelperWithParse', tableHelperWithParse);
+    .directive('tableHelperWithNgModel', tableHelperWithNgModel);
 
 }());
