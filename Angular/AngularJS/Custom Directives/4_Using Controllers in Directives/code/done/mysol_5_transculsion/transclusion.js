@@ -13,6 +13,7 @@
           vm.addTask = function () {
 
               if (!vm.tasks) vm.tasks = [];
+              
 
               vm.tasks.push({
                 title: vm.title
