@@ -1,0 +1,14 @@
+<h2>Services</h2>
+<div ng-repeat="service in services">
+  <div class="row service">
+    <div class="col-md-2">
+      <img src="../../libs/{{service.image}}" height="100" width="100" style="object-fit: contain;">
+    </div>
+    <div class="col-md-10">
+      <h3>{{service.name}}</h3>
+      <p>{{service.description}}</p>
+      <a href="#/contact" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div>
+</div>
+
