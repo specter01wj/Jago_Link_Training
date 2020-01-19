@@ -15,6 +15,7 @@ export class AppComponent {
 
 	constructor() {
 		this.title = 'Angular Binding Events';
+		
 	}
 
 	log(msg: string, data: string) {
