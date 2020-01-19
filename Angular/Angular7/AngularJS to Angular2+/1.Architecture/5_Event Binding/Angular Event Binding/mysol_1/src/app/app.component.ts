@@ -17,6 +17,7 @@ export class AppComponent {
 		this.title = 'Angular Binding Events';
 
 
+
 		
 	}
 
