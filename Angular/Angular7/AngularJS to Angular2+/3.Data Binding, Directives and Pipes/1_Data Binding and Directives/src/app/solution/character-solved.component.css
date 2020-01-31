@@ -13,6 +13,7 @@
 }
 
 .selected {
+	background-color: purple;
   border-right: 5px solid #eee;
   border-bottom: 5px solid #eee;
 }

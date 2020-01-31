@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   <div>
     <h1>Storyline Tracker</h1>
     <h3>Component Demo</h3>
-    <story-characters [storyId]="7" (changed)=changed($event)></story-characters>
+    <story-characters [storyId]="7" (changed)=changedOut($event)></story-characters>
   </div>
   `
 })
 
 export class AppComponent {
-  changed(changedCharacter: any) {
+  changedOut(changedCharacter: any) {
     if (changedCharacter) {
       console.log(`Event Emitter said you selected ${changedCharacter.name}`);
     }
