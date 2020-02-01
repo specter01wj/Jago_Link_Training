@@ -25,6 +25,7 @@ export class CharacterListComponent {
 
   constructor(private characterService: CharacterService) {
   	this.characters = this.characterService.getCharacters();
+    this.messages = this.characterService.getMessages();
   }
 
   select(character: Character) {
