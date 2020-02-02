@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet>
   `
 })
-export class VehiclesComponent {}
+export class VehiclesComponent {
+}
