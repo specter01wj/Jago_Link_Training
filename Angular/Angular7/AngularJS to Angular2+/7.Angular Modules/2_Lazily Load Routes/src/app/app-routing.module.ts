@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/characters' },
   {
     path: 'vehicles',
-    loadChildren: 'app/vehicles/vehicles.module#VehiclesModule'
+    loadChildren: './vehicles/vehicles.module#VehiclesModule'
   },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ];
