@@ -8,5 +8,7 @@ import { Vehicle } from './vehicle.service';
 })
 
 export class VehicleComponent {
-  @Input() vehicle: Vehicle;
+	@Input() vehicle: Vehicle;
+
+
 }

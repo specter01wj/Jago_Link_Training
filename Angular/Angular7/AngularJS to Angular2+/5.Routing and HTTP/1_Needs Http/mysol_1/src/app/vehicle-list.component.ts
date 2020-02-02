@@ -16,20 +16,21 @@ export class VehicleListComponent {
  	constructor(private vehicleService: VehicleService) {}
 
  	getVehicles() {
-    // this.vehicles = this.vehicleService.getVehicles();
-    	this.vehicleService.getVehicles()
-    		.subscribe(
-    			vehicles => this.vehicles = vehicles,
-    			error => this.errorMessage = <any>error
-    		);
-	}
+ 		this.vehicleService.getVehicles()
+ 			.subscribe(
+ 				vehicles => this.vehicles = vehicles,
+ 				error => this.errorMessage = <any>error
+ 			);
+ 	}
 
-	ngOnInit() {
-	  this.getVehicles();
-	}
+ 	ngOnInit() {
+ 		this.getVehicles();
+ 	}
 
-	select(vehicle: Vehicle) {
-	  this.selectedVehicle = vehicle;
-	}
+ 	select(vehicle: Vehicle) {
+ 		this.selectedVehicle = vehicle;
+ 	}
+
 
 }
+

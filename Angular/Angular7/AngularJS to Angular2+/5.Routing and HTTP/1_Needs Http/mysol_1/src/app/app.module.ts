@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { HttpModule } from '@angular/http';
 
 import './rxjs-extensions';
@@ -19,3 +20,5 @@ import { VehicleService } from './vehicle.service';
 })
 
 export class AppModule {}
+
+

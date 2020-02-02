@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -16,15 +17,17 @@ export class VehicleService {
 
 	getVehicles() {
 		return this.http.get('api/vehicles.json')
-			.map((response: Response) => <Vehicle[]>response.json().data)
-			.catch(this.handleError);
+				.map((response: Response) => <Vehicle[]>response.json().data)
+				.catch(this.handleError);
 	}
 
 	private handleError(error: Response) {
 		let msg = `Status code ${error.status} on url ${error.url}`;
 		console.error(msg);
-		
-    	return throwError(msg);
+		return throwError(msg);
 	}
 
+
 }
+
+
