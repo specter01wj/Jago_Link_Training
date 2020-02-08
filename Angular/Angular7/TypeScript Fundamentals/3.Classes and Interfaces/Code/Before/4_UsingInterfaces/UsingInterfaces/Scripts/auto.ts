@@ -5,19 +5,19 @@ interface IEngine {
 }
 
 
-interface IAutoOptions {
+/*interface IAutoOptions {
     basePrice: number;
     engine: IEngine;
     state: string;
     make: string;
     model: string;
     year: number;
-}
+}*/
 
-interface ITruckOptions extends IAutoOptions {
+/*interface ITruckOptions extends IAutoOptions {
     bedLength: string;
     fourByFour: boolean;
-}
+}*/
 
 
 class Engine implements IEngine {
@@ -66,22 +66,22 @@ class Auto {
     accessoryList: string;
 
 
-    /*constructor(basePrice: number, engine: Engine, make: string, model: string, state: string, year: number) {
+    constructor(basePrice: number, engine: Engine, make: string, model: string, state: string, year: number) {
         this.engine = engine;
         this.basePrice = basePrice;
         this.state = state;
         this.make = make;
         this.model = model;
         this.year = year;
-    }*/
-    constructor(options: IAutoOptions) {
+    }
+    /*constructor(options: IAutoOptions) {
         this.engine = options.engine;
         this.basePrice = options.basePrice;
         this.state = options.state;
         this.make = options.make;
         this.model = options.model;
         this.year = options.year;
-    }
+    }*/
 
 
     get basePrice(): number {
@@ -122,7 +122,7 @@ class Auto {
 }
 
 
-class Truck extends Auto {
+/*class Truck extends Auto {
     bedLength: string;
     fourByFour: boolean;
 
@@ -132,17 +132,17 @@ class Truck extends Auto {
         this.bedLength = options.bedLength;
         this.fourByFour = options.fourByFour;
     }
-}
+}*/
 
 
 window.onload = function () {
 
     // Using Interfaces
-    /*var auto = new Auto(40000, new Engine(400, 'V12'), 'Ferrari', 'F430', 'NY', 2019);
+    var auto = new Auto(40000, new Engine(400, 'V12'), 'Ferrari', 'F430', 'NY', 2019);
     var myEngine = <Engine>auto.engine;
-    console.log(myEngine.horsePower.toString());*/
+    console.log(myEngine.horsePower.toString());
 
-    var truck = new Truck({
+    /*var truck = new Truck({
         engine: new Engine(250, 'V6'),
         basePrice: 45000,
         state: 'Arizona',
@@ -153,6 +153,6 @@ window.onload = function () {
         fourByFour: true
     });
 
-    console.log(truck.bedLength);
+    console.log(truck.bedLength);*/
 
 }

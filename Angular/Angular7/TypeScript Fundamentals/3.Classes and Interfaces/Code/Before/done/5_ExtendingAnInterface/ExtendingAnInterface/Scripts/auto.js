@@ -1,15 +1,16 @@
-/*interface IAutoOptions {
-    basePrice: number;
-    engine: IEngine;
-    state: string;
-    make: string;
-    model: string;
-    year: number;
-}*/
-/*interface ITruckOptions extends IAutoOptions {
-    bedLength: string;
-    fourByFour: boolean;
-}*/
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Engine = /** @class */ (function () {
     function Engine(horsePower, engineType) {
         this.horsePower = horsePower;
@@ -52,23 +53,23 @@ var Accessory = /** @class */ (function () {
     return Accessory;
 }());
 var Auto = /** @class */ (function () {
-    function Auto(basePrice, engine, make, model, state, year) {
+    /*constructor(basePrice: number, engine: Engine, make: string, model: string, state: string, year: number) {
         this.engine = engine;
         this.basePrice = basePrice;
         this.state = state;
         this.make = make;
         this.model = model;
         this.year = year;
+    }*/
+    function Auto(options) {
+        this.engine = options.engine;
+        this.basePrice = options.basePrice;
+        this.state = options.state;
+        this.make = options.make;
+        this.model = options.model;
+        this.year = options.year;
     }
     Object.defineProperty(Auto.prototype, "basePrice", {
-        /*constructor(options: IAutoOptions) {
-            this.engine = options.engine;
-            this.basePrice = options.basePrice;
-            this.state = options.state;
-            this.make = options.make;
-            this.model = options.model;
-            this.year = options.year;
-        }*/
         get: function () {
             return this._basePrice;
         },
@@ -112,23 +113,22 @@ var Auto = /** @class */ (function () {
     };
     return Auto;
 }());
-/*class Truck extends Auto {
-    bedLength: string;
-    fourByFour: boolean;
-
-    constructor(options: ITruckOptions) {
-        super(options);
-
-        this.bedLength = options.bedLength;
-        this.fourByFour = options.fourByFour;
+var Truck = /** @class */ (function (_super) {
+    __extends(Truck, _super);
+    function Truck(options) {
+        var _this = _super.call(this, options) || this;
+        _this.bedLength = options.bedLength;
+        _this.fourByFour = options.fourByFour;
+        return _this;
     }
-}*/
+    return Truck;
+}(Auto));
 window.onload = function () {
     // Using Interfaces
-    var auto = new Auto(40000, new Engine(400, 'V12'), 'Ferrari', 'F430', 'NY', 2019);
-    var myEngine = auto.engine;
-    console.log(myEngine.horsePower.toString());
-    /*var truck = new Truck({
+    /*var auto = new Auto(40000, new Engine(400, 'V12'), 'Ferrari', 'F430', 'NY', 2019);
+    var myEngine = <Engine>auto.engine;
+    console.log(myEngine.horsePower.toString());*/
+    var truck = new Truck({
         engine: new Engine(250, 'V6'),
         basePrice: 45000,
         state: 'Arizona',
@@ -138,6 +138,5 @@ window.onload = function () {
         bedLength: 'Short bed',
         fourByFour: true
     });
-
-    console.log(truck.bedLength);*/
+    console.log(truck.bedLength);
 };
