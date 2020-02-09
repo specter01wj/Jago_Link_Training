@@ -18,6 +18,7 @@ namespace demo_02_04 {
     console.log(guy.fullName);
     console.log(guy.fullName());
 
+
     
 
     var a = ko.observableArray([]);
