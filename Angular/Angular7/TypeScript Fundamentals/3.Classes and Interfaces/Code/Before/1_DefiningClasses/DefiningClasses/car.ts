@@ -16,7 +16,7 @@ class Car {
 	}
 
 	set engine(value: Engine) {
-		if(value === undefined) throw "Error!";
+		if(value === undefined) throw "my Error!";
 		this._engine = value;
 	}
 
@@ -33,8 +33,8 @@ window.onload = function() {
 	var engine = new Engine(3000, 'V8');
 	var car = new Car(engine);
 
-	// var engine2 = new Engine(20000, 'V12');
-	// car.engine(engine2);
+	var engine2 = new Engine(20000, 'V12');
+	car.engine = engine2;
 	console.log(car.engine.engineType);
 	car.start();
 }
