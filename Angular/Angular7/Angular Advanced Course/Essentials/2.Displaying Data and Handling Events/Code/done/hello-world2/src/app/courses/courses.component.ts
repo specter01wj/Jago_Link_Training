@@ -56,7 +56,7 @@ export class CoursesComponent implements OnInit {
   }
 
   onSuccess($event) {
-    // $event.stopPropagation();
+    $event.stopPropagation();
     console.log("On Success!");
   }
 
