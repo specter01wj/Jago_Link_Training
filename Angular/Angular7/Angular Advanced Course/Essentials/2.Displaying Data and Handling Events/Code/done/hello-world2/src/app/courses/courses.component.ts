@@ -29,27 +29,31 @@ export class CoursesComponent implements OnInit {
   text = "In a stunning announcement, Shepard Smith said on his Friday show that after more than two decades at Fox News, he was stepping down as chief news anchor, and leaving the network.";
 
 
+  onKeyUp($event) {
+    if($event.keyCode === 13) {
+      console.log("Enter was pressed!");
+    }
+  }
+
+  /*onKeyUp() {
+    console.log("Enter was pressed!!!");
+  }*/
+
+  
+  onKeyUp2($event) {
+    // console.log("Pressed: " + $event.target.value);
+    console.log("Pressed: " + $event.code);
+  }
+
+  /*onKeyUp2(email) {
+    console.log("Pressed: " + email);
+  }*/
+
+
   onKeyUp3() {
     console.log(this.email);
   }
 
-  /*onKeyUp2($event) {
-    console.log("Pressed: " + $event.target.value);
-  }*/
-
-  onKeyUp2(email) {
-    console.log("Pressed: " + email);
-  }
-
-  /*onKeyUp($event) {
-    if($event.keyCode === 13) {
-      console.log("Enter was pressed!");
-    }
-  }*/
-
-  onKeyUp() {
-    console.log("Enter was pressed!!!");
-  }
 
   onDivClicked($event) {
     console.log("On Div!!!");
