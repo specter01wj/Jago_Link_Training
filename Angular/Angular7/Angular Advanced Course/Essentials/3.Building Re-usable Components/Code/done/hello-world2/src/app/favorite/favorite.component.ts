@@ -5,6 +5,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.less'],
   encapsulation: ViewEncapsulation.Emulated
+  // encapsulation: ViewEncapsulation.None
   /*styles: [
   	`
   		.glyphicon {
