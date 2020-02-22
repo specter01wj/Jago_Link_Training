@@ -1,0 +1,13 @@
+
+<div style="text-align: center">
+  <h1>
+    Welcome to {{ title }}
+  </h1>
+</div>
+
+
+<app-courses></app-courses>
+
+<app-favorite [is-fav]="post.isFav" (on-change)="onFavChanged($event)"></app-favorite>
+
+
