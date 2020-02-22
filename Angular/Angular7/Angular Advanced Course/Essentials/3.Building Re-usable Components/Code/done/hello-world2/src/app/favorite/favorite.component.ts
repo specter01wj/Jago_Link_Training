@@ -27,8 +27,8 @@ export class FavoriteComponent implements OnInit {
 
   toggleFav() {
   	this.isFav = !this.isFav;
-  	// this.change.emit(this.isFav);
-  	this.change.emit({newVal: this.isFav});
+  	this.change.emit(this.isFav);
+  	// this.change.emit({newVal: this.isFav});
   }
 
 }

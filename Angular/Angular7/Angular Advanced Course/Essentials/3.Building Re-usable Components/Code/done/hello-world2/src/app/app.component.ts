@@ -14,9 +14,13 @@ export class AppComponent {
   	isFav: false
   }
 
-  onFavChanged(eventArgs: FavChangedEventArgs) {
-  	console.log("Fav changed!" + eventArgs.newVal);
+  onFavChanged(isFav) {
+  	console.log("Fav changed!" + isFav);
   }
+
+  /*onFavChanged(eventArgs: FavChangedEventArgs) {
+    console.log("Fav changed!" + eventArgs.newVal);
+  }*/
 
 
 }
