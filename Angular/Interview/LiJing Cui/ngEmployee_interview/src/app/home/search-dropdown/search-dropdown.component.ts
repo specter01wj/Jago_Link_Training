@@ -18,7 +18,7 @@ import { EmployeeService } from '../../services/employee/employee.service';
 export class SearchDropDownComponent { 
 
 	errorMessage: string;
-	usersArray: Array = [];
+	usersArray: Array<string> = [];
 	products: IEmployee[] = [];
 
 
