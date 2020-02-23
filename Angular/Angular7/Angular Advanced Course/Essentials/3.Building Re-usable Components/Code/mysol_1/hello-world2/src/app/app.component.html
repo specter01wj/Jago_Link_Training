@@ -10,4 +10,27 @@
 
 <app-favorite [is-fav]="post.isFav" (on-change)="onFavChanged($event)"></app-favorite>
 
+<span class="glyphicon glyphicon-th-list"></span>
+
+
+<!-- <app-panel>
+	<div class="heading">
+		Heading
+	</div>
+	<div class="body">
+		<h2>Body</h2>
+		<p>boody contents .....</p>
+	</div>
+</app-panel> -->
+
+
+<app-panel>
+	<ng-container class="heading">
+		Heading
+	</ng-container>
+	<ng-container class="body">
+		<h2>Body</h2>
+		<p>boody contents .....</p>
+	</ng-container>
+</app-panel>
 
