@@ -19,6 +19,12 @@ export class AppComponent {
 
 	  courses_3 = [];
 
+	  /*courses_3 = [
+	  	{id: 1, name: "course 1"},
+	  	{id: 2, name: "course 2"},
+	  	{id: 3, name: "course 3"}
+	  ];*/
+
 	  canSave = true;
 
   	viewMode = "map";
