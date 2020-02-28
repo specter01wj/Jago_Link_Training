@@ -1,6 +1,6 @@
 Assignment: Course Form
 
-Build a form for Udemy instructors to create a new course.
+Build a form for School instructors to create a new course.
 
 
 Questions for this assignment
