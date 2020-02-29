@@ -1,6 +1,6 @@
-Assignment: Change Password
+Assignment: Change Password Form
 
-Build a form for change old password.
+Build a change password form using code.
 
 
 
