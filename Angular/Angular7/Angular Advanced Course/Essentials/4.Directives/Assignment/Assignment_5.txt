@@ -1,4 +1,4 @@
-Assignment: ZippyComponent
+Assignment 5: ZippyComponent
 
 Build a re-usable zippy component.
 

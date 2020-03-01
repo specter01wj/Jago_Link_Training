@@ -1,4 +1,4 @@
-Assignment: Favorite Component
+Assignment 2: Favorite Component
 
 Build a component for marking an object (post, tweet, image) as favorite.
 

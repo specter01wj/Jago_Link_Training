@@ -1,4 +1,4 @@
-Assignment: Title Casing
+Assignment 3: Title Casing
 
 Use what you've learned in this section to convert the input into Title Casing.
 

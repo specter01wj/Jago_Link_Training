@@ -1,4 +1,4 @@
-Assignment: List of Authors
+Assignment 1: List of Authors
 
 Use what you've learned in this section to display the list of authors.
 

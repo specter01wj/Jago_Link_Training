@@ -1,4 +1,4 @@
-Assignment: Course Form
+Assignment 6: Course Form
 
 Build a form for School instructors to create a new course.
 

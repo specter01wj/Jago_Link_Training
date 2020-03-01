@@ -1,4 +1,4 @@
-Assignment: Like Component
+Assignment 4: Like Component
 
 Build a re-usable "like" component, like the one you see on Twitter.
 
