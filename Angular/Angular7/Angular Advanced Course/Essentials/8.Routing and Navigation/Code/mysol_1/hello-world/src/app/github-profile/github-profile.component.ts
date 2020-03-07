@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GithubFollowersService } from './../services/github-followers.service';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/combineLatest';
@@ -13,7 +14,8 @@ import 'rxjs/add/operator/switchMap';
 })
 export class GithubProfileComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router,
+    private service: GithubFollowersService) { }
 
   ngOnInit() {
   	/*this.route.paramMap
@@ -40,7 +42,7 @@ export class GithubProfileComponent implements OnInit {
     .switchMap(combined => {
       let id = combined[0].get('id');
       let page = combined[1].get('page');
-      // return this.service.getAll();
+      return this.service.getAll();
     })
     .subscribe(params => {
         // console.log(params);
