@@ -18,19 +18,19 @@ export class GithubProfileComponent implements OnInit {
     private service: GithubFollowersService) { }
 
   ngOnInit() {
-  	/*this.route.paramMap
+  	this.route.paramMap
   		.subscribe(params => {
   			// console.log(params);
   			let id = +params.get('id');
   			console.log(id);
-  		});*/
+  		});
   		// console.log("Github profile, oninit!");
   		/*let id = this.route.snapshot.paramMap.get('id');
   		console.log(id);*/
-    Observable.combineLatest([
+    /*Observable.combineLatest([
       this.route.paramMap,
       this.route.queryParamMap
-    ])
+    ])*/
     /*.subscribe(combined => {
       let id = combined[0].get('id');
       let page = combined[1].get('page');
@@ -39,7 +39,7 @@ export class GithubProfileComponent implements OnInit {
       this.service.getAll()
           .subscribe(followers => this.followers = followers);
     });*/
-    .switchMap(combined => {
+    /*.switchMap(combined => {
       let id = combined[0].get('id');
       let page = combined[1].get('page');
       return this.service.getAll();
@@ -48,7 +48,7 @@ export class GithubProfileComponent implements OnInit {
         // console.log(params);
         let id = +params.get('id');
         console.log(id);
-      });
+      });*/
   }
 
   submit() {
