@@ -28,8 +28,8 @@ export class GithubFollowersComponent implements OnInit {
       let page = combined[1].get('page');
 
       // this.service.getAll({ id: id, page: page });
-      // this.service.getAll()
-      //     .subscribe(followers => this.followers = followers);
+      this.service.getAll()
+          .subscribe(followers => this.followers = followers);
     });
   }
 }
