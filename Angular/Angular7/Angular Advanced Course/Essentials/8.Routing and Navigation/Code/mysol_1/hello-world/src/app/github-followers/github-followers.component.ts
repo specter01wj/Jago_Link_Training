@@ -19,7 +19,17 @@ export class GithubFollowersComponent implements OnInit {
   	private service: GithubFollowersService) { }
 
   ngOnInit() {
-    this.service.getAll()
-      .subscribe(followers => this.followers = followers);
+    Observable.combineLatest([
+      this.route.paramMap,
+      this.route.queryParamMap
+    ])
+    .subscribe(combined => {
+      let id = combined[0].get('id');
+      let page = combined[1].get('page');
+
+      // this.service.getAll({ id: id, page: page });
+      // this.service.getAll()
+      //     .subscribe(followers => this.followers = followers);
+    });
   }
 }
