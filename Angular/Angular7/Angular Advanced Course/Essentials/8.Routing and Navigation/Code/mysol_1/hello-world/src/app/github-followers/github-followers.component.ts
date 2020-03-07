@@ -19,10 +19,10 @@ export class GithubFollowersComponent implements OnInit {
   	private service: GithubFollowersService) { }
 
   ngOnInit() {
-    Observable.combineLatest([
+    /*Observable.combineLatest([
       this.route.paramMap,
       this.route.queryParamMap
-    ])
+    ])*/
     /*.subscribe(combined => {
       let id = combined[0].get('id');
       let page = combined[1].get('page');
@@ -31,11 +31,12 @@ export class GithubFollowersComponent implements OnInit {
       this.service.getAll()
           .subscribe(followers => this.followers = followers);
     });*/
-    .switchMap(combined => {
+    /*.switchMap(combined => {
       let id = combined[0].get('id');
       let page = combined[1].get('page');
       return this.service.getAll();
-    })
-    .subscribe(followers => this.followers = followers);
+    })*/
+    this.service.getAll()
+      .subscribe(followers => this.followers = followers);
   }
 }
