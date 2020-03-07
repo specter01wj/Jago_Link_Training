@@ -22,4 +22,10 @@ export class GithubProfileComponent implements OnInit {
   		console.log(id);*/
   }
 
+  submit() {
+    this.router.navigate(['/followers'], {
+      queryParams: { page: 1, order: 'newest'}
+    })
+  }
+
 }
