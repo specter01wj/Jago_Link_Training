@@ -6,7 +6,7 @@
   </div>
   <div class="media-body">
     <h4 class="media-heading">
-      <a routerLink="/followers" [queryParams]="{ page: 1, order: 'newest'}">Followers</a>
+      <a [routerLink]="['/followers', follower.id]" [queryParams]="{ page: 1, order: 'newest'}">Followers</a>
     </h4>
     <a href="follower.html_url">{{ follower.html_url }}</a>
   </div>
