@@ -19,7 +19,7 @@ export class DataService {
       return this.http.get(this.url)
         .pipe(
         	map(response => response), 
-          	catchError(this.handleError)
+          catchError(this.handleError)
         );;
     }
 
