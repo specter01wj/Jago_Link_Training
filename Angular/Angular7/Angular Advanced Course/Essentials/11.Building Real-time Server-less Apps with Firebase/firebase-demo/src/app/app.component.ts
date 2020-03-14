@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class AppComponent implements OnDestroy {
   title = 'firebase-demo';
   courses: any[];
-  courseObj: any[];
+  courseObj: any;
   courses$: AngularFireList<any[]>;
   subscription: Subscription;
 
@@ -24,7 +24,7 @@ export class AppComponent implements OnDestroy {
   			console.log(this.courses);
   		});
 
-  	db.object('/courses/1').valueChanges()
+  	db.object('/courses/2').valueChanges()
   		.subscribe(course => {
   			this.courseObj = course;
   			console.log(this.courseObj);
@@ -39,8 +39,8 @@ export class AppComponent implements OnDestroy {
   add(course: HTMLInputElement) {
   	this.courses.push({
   		author: course.value,
-		price: 2400,
-		title: "NBA"
+		  price: 2400,
+		  title: "Lord of Ring"
   	});
   }
 
