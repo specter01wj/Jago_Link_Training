@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-// import { FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireList } from 'angularfire2/database';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -12,7 +12,7 @@ export class AppComponent implements OnDestroy {
   title = 'firebase-demo';
   courses: any[];
   courseObj: any[];
-  courses$: FirebaseListObservable<any[]>;
+  courses$: AngularFireList<any[]>;
   subscription: Subscription;
 
   constructor(private db: AngularFireDatabase) {
