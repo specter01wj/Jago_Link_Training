@@ -15,7 +15,6 @@ export class AppComponent {
   	private userService: UserService,
   	private auth: AuthService,
   	private router: Router) {
-
   	auth.user$.subscribe(user => {
   		if(user) {
   			userService.save(user);
@@ -23,7 +22,6 @@ export class AppComponent {
   			router.navigateByUrl(returnUrl);
   		}
   	});
-
   }
 
 }

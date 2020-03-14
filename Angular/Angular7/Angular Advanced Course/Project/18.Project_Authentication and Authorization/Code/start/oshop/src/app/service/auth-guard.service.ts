@@ -6,8 +6,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
-  constructor(private auth: AuthService,
-  	private router: Router) { }
+  constructor(
+  	private auth: AuthService,
+  	private router: Router
+  ) { }
 
   canActivate(route, state: RouterStateSnapshot) {
   	return this.auth.user$.map(user => {
