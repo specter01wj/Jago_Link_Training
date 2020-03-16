@@ -7,6 +7,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
+import { AuthService } from './service/auth.service'; 
+import { AuthGuardService } from './service/auth-guard.service'; 
+
 import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { HomeComponent } from './home/home.component';
