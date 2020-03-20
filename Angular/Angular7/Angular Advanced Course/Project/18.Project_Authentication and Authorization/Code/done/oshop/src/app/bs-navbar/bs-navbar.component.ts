@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth'; 
+// import { AngularFireAuth } from 'angularfire2/auth'; 
 import { AuthService } from './../service/auth.service'; 
 import { Observable } from 'rxjs/Observable';
 import { AppUser } from './../models/app-user';
-import * as firebase from 'firebase'; 
+// import * as firebase from 'firebase'; 
 
 @Component({
   selector: 'bs-navbar',
