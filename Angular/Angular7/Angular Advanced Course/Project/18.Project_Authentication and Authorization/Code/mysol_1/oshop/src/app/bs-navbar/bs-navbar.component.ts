@@ -16,6 +16,7 @@ export class BsNavbarComponent implements OnInit {
   	// afAuth.authState.subscribe(user => this.user = user);
   	this.user$ = afAuth.authState;
 
+
     
   }
 
