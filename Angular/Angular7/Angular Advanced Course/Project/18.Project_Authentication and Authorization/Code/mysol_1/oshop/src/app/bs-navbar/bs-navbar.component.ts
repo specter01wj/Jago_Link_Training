@@ -15,14 +15,6 @@ export class BsNavbarComponent implements OnInit {
   constructor(private afAuth: AngularFireAuth) { 
   	// afAuth.authState.subscribe(user => this.user = user);
   	this.user$ = afAuth.authState;
-
-
-
-
-
-
-
-    
   }
 
   ngOnInit() {
