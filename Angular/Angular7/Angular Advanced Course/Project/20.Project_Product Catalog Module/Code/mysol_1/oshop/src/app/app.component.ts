@@ -16,16 +16,6 @@ export class AppComponent {
       userService.save(user);
 
       let returnUrl = localStorage.getItem('returnUrl');
-
-
-
-
-
-
-
-
-
-      
       if (!returnUrl) return; 
 
       localStorage.removeItem('returnUrl');
