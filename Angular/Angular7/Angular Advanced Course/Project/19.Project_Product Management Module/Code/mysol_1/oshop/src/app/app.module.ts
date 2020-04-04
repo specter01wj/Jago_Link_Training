@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { FormsModule } from '@angular/forms'; 
 import { CustomFormsModule } from 'ng2-validation'; 
+import { DataTableModule } from 'angular-4-data-table'; 
 
 import { ProductService } from './product.service'; 
 import { CategoryService } from './category.service'; 
@@ -52,6 +53,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     NgbModule.forRoot(),
     FormsModule,
     CustomFormsModule,
+    DataTableModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'products', component: ProductsComponent },
