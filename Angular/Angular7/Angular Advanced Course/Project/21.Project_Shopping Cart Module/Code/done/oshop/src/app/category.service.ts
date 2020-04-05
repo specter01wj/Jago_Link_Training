@@ -11,6 +11,7 @@ export class CategoryService {
 
 
 
+
     	
       query: {
         orderByChild: 'name'
