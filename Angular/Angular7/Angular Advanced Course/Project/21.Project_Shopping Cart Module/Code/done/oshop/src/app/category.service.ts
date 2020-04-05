@@ -9,6 +9,7 @@ export class CategoryService {
   getAll() { 
     return this.db.list('/categories', {
 
+
     	
       query: {
         orderByChild: 'name'
