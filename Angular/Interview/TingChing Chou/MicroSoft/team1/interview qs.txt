@@ -1,0 +1,6 @@
+1. 一個是 max subarray sum, follow up 是找出 subarray 
+
+2. 給 int[], 定義 lucky number 是出現次數和自己相同, ex: 2 若在 int[] 出現恰好 2 次就是 lucky number. 
+出最大的 lucky number  
+
+3. 做電梯頁面: 顯示現在樓層, 往上往下, 1-4 樓按鈕 

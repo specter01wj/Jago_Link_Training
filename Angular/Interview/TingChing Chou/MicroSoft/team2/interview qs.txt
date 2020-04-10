@@ -1,0 +1,3 @@
+面試是在這個 test 的網頁上加 2 個功能
+右邊的 name, description, image 改成不同 tab, 可以來回切換
+左邊加入留下評論功能, 碰到 "hate speech", 彈出警告視窗
