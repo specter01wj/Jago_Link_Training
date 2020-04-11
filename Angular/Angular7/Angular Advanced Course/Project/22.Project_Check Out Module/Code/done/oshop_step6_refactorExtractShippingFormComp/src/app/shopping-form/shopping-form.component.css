@@ -1,0 +1,7 @@
+.btn {
+	cursor: pointer;
+}
+
+.btn[disabled] {
+	cursor: not-allowed;
+}
