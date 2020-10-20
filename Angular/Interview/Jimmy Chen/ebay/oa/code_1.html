@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 	Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
+				determine if the input string is valid.
+
+				The brackets must close in the correct order, "()" and "()[]{}" are all valid
+				but "(]" and "([)]" are not.
+			 */
+			$(document).ready(function(){
+				
+				/**
+				 * @param {string} s
+				 * @return {boolean}
+				 */
+				let linearSearch = function(arr, x) {
+					let n = arr.length;
+	        for(let i = 0; i < n; i++) {
+	            if (arr[i] === x)
+	                return i;
+	        }
+	        return -1;
+				};
+
+				let nums = [2, 3, 4, 10, 40];
+				let tt1 = linearSearch(nums, 4);
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Results: ' + tt1 + '</h2>');
+			});
+				
+			/*
+		    solution:
+		    
+			    
+			*/
+				
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>
