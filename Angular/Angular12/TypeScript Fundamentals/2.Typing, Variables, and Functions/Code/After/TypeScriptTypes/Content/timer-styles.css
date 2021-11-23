@@ -1,0 +1,121 @@
+﻿#timerContainer
+{
+    width: 290px;
+    height:156px;
+}
+
+#timerSurface
+{
+    width: 290px;
+    height:108px;
+    background-color: #383431;
+}
+#timerHeaders 
+{
+    height:20px;
+}
+#timerNumbers 
+{
+    text-align: center;
+    font-family:  Impact, sans-serif;
+    font-size: 54px;
+    color: #D0D0D0;
+}
+
+.HeaderText 
+{
+    float:left;
+    height: 20px;
+    padding: 5px 6px 5px 6px;
+    text-align: center;
+    font-family:  sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #D0D0D0;
+    margin-left: 5px;
+}
+.TimerText
+{
+    float:left;
+    height: 60px;
+    padding: 5px 5px 5px 5px;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    background-color: #242323;
+    margin-left: 5px;
+    vertical-align: middle;
+    background-image: url(/images/bg.png); 
+}
+
+.NormalWidth
+{
+    width:68px;
+}
+    
+.WideWidth
+{
+    width:100px;
+}
+
+#buttonSurface 
+{
+    width:236px;
+    margin: auto;
+}
+.ButtonStart
+{
+    background-image: url('/images/start.png');
+}
+.ButtonPause
+{
+    background-image: url('/images/pause.png');
+}
+.ButtonClear
+{
+    background-image: url('/images/clear.png');
+}
+.Button
+{
+    float:left;
+    width:68px;
+    height: 68px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    vertical-align:middle;
+    cursor:pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+    .Button:hover {
+        -ms-transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -webkit-transition: -webkit-transform 0.3s ease-in;
+        -moz-transform: scale(1.05);
+        -moz-transition: -moz-transform 0.3s ease-in;
+        -o-transform: scale(1.05);
+        transform: scale(1.05);
+        -o-transition: transform 0.3s ease-in;
+        transition: transform 0.3s ease-in;
+    }
+
+.bg
+{
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(0, 0, 0)),
+        color-stop(0.46, rgb(111, 111, 111)),
+        color-stop(0.48, rgb(0, 0, 0)),
+        color-stop(0.50, rgb(111, 111, 111)),
+        color-stop(1, rgb(0, 0, 0))
+        );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(0, 0, 0) 0,
+        rgb(111, 111, 111) 46%,
+        rgb(0, 0, 0) 48%,
+        rgb(111, 111, 111) 50%,
+        rgb(0, 0, 0) 100%
+        );
+}
