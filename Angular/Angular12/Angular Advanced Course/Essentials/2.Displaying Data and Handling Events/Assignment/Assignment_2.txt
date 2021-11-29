@@ -1,0 +1,15 @@
+Assignment 2: Favorite Component
+
+Build a component for marking an object (post, tweet, image) as favorite.
+
+
+solution:
+
+(html):
+<span class="glyphicon" [class.glyphicon-star]="isFavorite" [class.glyphicon-star-empty]="!isFavorite" (click)="toggleFav()"></span>
+
+(ts):
+toggleFav() {
+    this.isFavorite = !this.isFavorite;
+  }
+

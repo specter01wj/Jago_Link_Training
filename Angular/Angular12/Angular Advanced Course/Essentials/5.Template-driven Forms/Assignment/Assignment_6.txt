@@ -1,0 +1,12 @@
+Assignment 6: Course Form
+
+Build a form for School instructors to create a new course.
+
+
+Questions for this assignment
+How can we bind the selected value of a drop-down list to a complex object?
+
+[ngValue]="someObject"
+
+
+

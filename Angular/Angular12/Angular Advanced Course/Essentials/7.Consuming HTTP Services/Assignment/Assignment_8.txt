@@ -1,0 +1,20 @@
+Assignment 8: GitHub Followers Page
+
+To render the layout like what you saw in the video, use Boostrap Media Object. 
+You can read about this component on Bootstrap website (getbootstrap.com) under Components.
+
+
+
+To render a round avatar, use the following CSS attributes:
+
+width: 80px;
+
+height: 80px;
+
+border-radius: 100%;
+
+
+
+Also, you can use the starter code I've attached here. In this ZIP file you'll find 
+the re-usable data service we created in this section. 
+

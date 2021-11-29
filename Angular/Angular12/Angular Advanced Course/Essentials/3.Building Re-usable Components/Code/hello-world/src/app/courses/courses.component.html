@@ -1,0 +1,56 @@
+<p>courses works! for {{ "Dr:" + name }}</p>
+
+<p>My name: {{ getTitle() }}</p>
+
+<ul>
+	<li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+
+
+<img [src]="imageUrl" />
+
+
+<table>
+	<tr>
+		<td [attr.colspan]="colspan_2">Span 2</td>
+		<td [attr.colspan]="colspan_6">Span 6</td>
+	</tr>
+</table>
+
+
+<button class="btn btn-primary">Save</button>
+
+<button class="btn btn-warning" [class.active]="isActive" (click)="toggleWarning()">Warning</button>
+
+<button class="btn btn-info" [style.backgroundColor]="isActive ? 'blue' : 'orange'" (click)="toggleWarning()">Clear</button>
+
+<div (click)="onDivClicked($event)">
+	<button class="btn btn-success" (click)="onSuccess($event)">Success</button>
+</div>
+
+
+<!-- <input (keyup)="onKeyUp($event)" /> -->
+<input (keyup.enter)="onKeyUp()" />
+
+<!-- <input (keyup.enter)="onKeyUp2($event)" /> -->
+<!-- <input #email (keyup.enter)="onKeyUp2(email.value)" /> -->
+
+
+<input [(ngModel)]="email" (keyup.enter)="onKeyUp3()" />
+
+
+<div>
+	{{ course.title | uppercase }} <br/>
+	{{ course.students | number}} <br/>
+	{{ course.rating | number:'3.1-3' }} <br/>
+	{{ course.price | currency:'CNY':true:'5.1-3'}} <br/>
+	{{ course.releaseDate | date:'shortDate'}} <br/>
+</div>
+
+
+<div>
+	{{ text | summaryPipe: 20 }}
+</div>
+
+
+

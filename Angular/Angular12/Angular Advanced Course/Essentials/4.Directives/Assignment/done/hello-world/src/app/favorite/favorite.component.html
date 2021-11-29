@@ -1,0 +1,18 @@
+
+
+<p>favorite works!</p>
+
+
+
+<!-- <span class="glyphicon" [class.glyphicon-star]="isFav" [class.glyphicon-star-empty]="!isFav" (click)="toggleFav()"></span> -->
+<span class="glyphicon" [class.glyphicon-star]="isFav" [class.glyphicon-star-empty]="!isFav" 
+	[ngClass]="
+		{
+			'glyphicon-star': isFav,
+			'glyphicon-star-empty': !isFav
+		}
+	"
+	(click)="toggleFav()"></span>
+
+<span class="glyphicon glyphicon-music"></span>
+

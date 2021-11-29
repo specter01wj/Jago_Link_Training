@@ -1,0 +1,11 @@
+
+<!-- <span class="glyphicon" 
+	[class.glyphicon-heart]="isLiked" [class.glyphicon-heart-empty]="!isLiked" 
+	(click)="toggleLiked()"></span> -->
+
+<span class="glyphicon glyphicon-heart" 
+	[class.highlighted]="isLiked"
+	(click)="toggleLiked()"></span>
+
+<span>{{ LikesCount }}</span>
+
