@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormArray, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormArray, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-new-course-form',
@@ -24,7 +24,7 @@ export class NewCourseFormComponent implements OnInit {
   	topic.value = '';
   }
 
-  removeTopic(topic: FormControl) {
+  removeTopic(topic: AbstractControl) {
   	let index = this.topics.controls.indexOf(topic);
   	this.topics.removeAt(index);
   }
