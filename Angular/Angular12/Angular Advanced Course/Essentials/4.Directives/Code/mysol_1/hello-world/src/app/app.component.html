@@ -1,0 +1,110 @@
+<div style="text-align: center">
+  <h1>
+    Welcome to {{ title }}
+  </h1>
+</div>
+
+<app-courses></app-courses>
+
+<app-favorite [is-fav]="post.isFav" (on-change)="onFavChanged($event)"></app-favorite>
+
+<span class="glyphicon glyphicon-th-list"></span>
+
+<!-- <app-panel>
+	<div class="heading">
+		Heading
+	</div>
+	<div class="body">
+		<h2>Body</h2>
+		<p>boody contents .....</p>
+	</div>
+</app-panel> -->
+
+<app-panel>
+	<ng-container class="heading">
+		Heading
+	</ng-container>
+	<ng-container class="body">
+		<h2>Body</h2>
+		<p>boody contents .....</p>
+	</ng-container>
+</app-panel>
+
+
+<!-- <div *ngIf="courses.length > 0">
+  List of Courses
+</div>
+<div *ngIf="courses.length === 0">
+  No Course yet!
+</div> -->
+
+<!-- <div *ngIf="courses.length > 0; then courseList else noCourse"></div>
+<ng-template #courseList>List of Courses</ng-template>
+<ng-template #noCourse>No Course yet!</ng-template> -->
+
+<div [hidden]="courses.length === 0">
+  List of Courses
+</div>
+<div [hidden]="courses.length > 0">
+  No Course yet!
+</div>
+
+
+<ul class="nav nav-pills">
+	<li [class.active]="viewMode === 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
+	<li [class.active]="viewMode === 'list'"><a (click)="viewMode = 'list'">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+	<div *ngSwitchCase="'map'">Map View Content</div>
+	<div *ngSwitchCase="'list'">List View Content</div>
+	<div *ngSwitchDefault>Otherwise...</div>
+</div>
+
+
+<ul>
+  <li *ngFor="let course of courses_2; index as i">
+    {{ i }}: {{ course.name }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let course of courses_2; even as isEven">
+    {{ course.name }} <span *ngIf="isEven">(Even)</span>
+    <button (click)="onRemove(course)">Remove</button>
+  </li>
+</ul>
+<button (click)="onAdd()">Add</button>
+
+
+<ul>
+  <li *ngFor="let course of courses_3; trackBy: trackCourse">
+    {{ course.name }}
+  </li>
+</ul>
+
+<button (click)="loadCourses()">Load Course</button>
+
+<button
+	[style.backgroundColor]="canSave ? 'blue' : 'gray'"
+	[style.color]="canSave ? 'white' : 'black'"
+	[style.fontWeight]="canSave ? 'bold' : 'normal'"
+>Save 1</button>
+
+<button
+	[ngStyle]="{
+		'backgroundColor': canSave ? 'blue' : 'gray',
+		'color': canSave ? 'white' : 'black',
+		'fontWeight': canSave ? 'bold' : 'normal'
+	}"
+>Save 2</button>
+
+
+<span *ngIf="task.assignee">{{ task.assignee.name }}</span>
+
+<span>{{ task.assignee?.name }}</span>
+
+
+<input type="text" appInputFormat [format-type]="'uppercase'">
+<input type="text" appInputFormat [format-type]="'lowercase'">
+
+
