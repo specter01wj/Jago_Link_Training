@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 import { UsernameValidators } from './username.validators';
 
@@ -11,7 +11,7 @@ import { UsernameValidators } from './username.validators';
 export class SignupFormComponent implements OnInit {
 
   form = new FormGroup({
-    'username': new FormControl('', [
+  /*   'username': new FormControl('', [
       Validators.required,
       Validators.minLength(3),
       UsernameValidators.cannotContainSpace
@@ -19,9 +19,33 @@ export class SignupFormComponent implements OnInit {
       UsernameValidators.shouldBeUnique
     ]),
     'password': new FormControl('', Validators.required),
+  }); */
+
+    account: new FormGroup({
+      'username': new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        UsernameValidators.cannotContainSpace
+      ], [
+        UsernameValidators.shouldBeUnique
+      ]),
+      'password': new FormControl('', Validators.required),
+    })
+
   });
 
-  constructor() { }
+  // constructor() { }
+
+  constructor(fb: FormBuilder) {
+  	this.form = fb.group({
+  		name: ['', Validators.required],
+		contact: fb.group({
+			email: [],
+			phone: []
+		}),
+		topics: fb.array([])
+  	});
+  }
 
   ngOnInit(): void {
   }
@@ -33,11 +57,11 @@ export class SignupFormComponent implements OnInit {
   }
 
   get username() {
-    return this.form.get('username');
+    return this.form.get('account.username');
   }
 
   get password() {
-    return this.form.get('password');
+    return this.form.get('account.password');
   }
 
 }
