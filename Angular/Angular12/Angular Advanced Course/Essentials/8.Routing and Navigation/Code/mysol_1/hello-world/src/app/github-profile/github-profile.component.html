@@ -1,0 +1,12 @@
+<div>
+	<button (click)="returnHome()" class="btn btn-warning">Return</button>
+</div>
+
+<p>
+  github-profile works!
+</p>
+
+<button [routerLink]="['/followers', 12756, 'marka2g']" class="btn btn-warning">Previous</button>
+<button [routerLink]="['/followers', 23214, 'greglamb']" class="btn btn-primary">Next</button>
+
+<button (click)="submit()" class="btn btn-info">Submit</button>
