@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+<nav>
+  <a [routerLink]="['/welcome']" routerLinkActive="active">Welcome</a>
+  <a [routerLink]="['/europe']" routerLinkActive="active">Europe</a>
+  <a [routerLink]="['/asia']" routerLinkActive="active">Asia</a>
+  <a [routerLink]="['/africa']" routerLinkActive="active">Africa</a>
+  <a [routerLink]="['/oceania']" routerLinkActive="active">Oceania</a>
+</nav>
+
+<router-outlet></router-outlet>

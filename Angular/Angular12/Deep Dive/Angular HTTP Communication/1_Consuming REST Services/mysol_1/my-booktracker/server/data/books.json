@@ -1,0 +1,20 @@
+[
+    {
+        "bookID": 1,
+        "title": "Goodnight Moon",
+        "author": "Margaret Wise Brown",
+        "publicationYear": "1953"
+    },
+    {
+        "bookID": 4,
+        "title": "The Hobbit 3",
+        "author": "Jin",
+        "publicationYear": "2019"
+    },
+    {
+        "bookID": 7,
+        "title": "Star War",
+        "author": "James",
+        "publicationYear": "1986"
+    }
+]

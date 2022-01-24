@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body"
+       *appMyIf="country">
+
+    <div class="row">
+
+      <div class="col-md-6">
+      	<table class="table table-striped">
+				  <thead>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td class="col-xs-3">Name:</td>
+          		<td class="col-md-6">{{country.name}}</td>
+				    </tr>
+				    <tr>
+				      <td class="col-md-3">Capital:</td>
+          		<td class="col-md-6">{{country.capital}}</td>
+				    </tr>
+				    <tr>
+				      <td class="col-md-3">Region:</td>
+          		<td class="col-md-6">{{country.region}}</td>
+				    </tr>
+				    <tr>
+				    	<td class="col-md-3">Subregion:</td>
+          		<td class="col-md-6">{{country.subregion}}</td>
+				    </tr>
+				    <tr>
+				    	<td class="col-md-3">Population:</td>
+          		<td class="col-md-6">{{country.population | thousandSeparator}}</td>
+				    </tr>
+				    <tr>
+				    	<td class="col-md-3">Currencies:</td>
+          		<td class="col-md-6">{{country.currencies[0].name}} | {{country.currencies[0].code}} | {{country.currencies[0].symbol}}</td>
+				    </tr>
+				  </tbody>
+				</table>
+        
+      </div>
+
+      <div class="col-md-6"
+           *ngIf="country.flag">
+        <img class="center-block img-responsive"
+             [style.height.px]="250"
+             [style.margin.px]="10"
+             [src]="country.flag"
+             [title]="country.name">
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <button class="btn btn-outline-secondary mr-3"
+                style="width:80px"
+                [routerLink]="['/europe']" queryParamsHandling="preserve">
+          <i class="fa fa-chevron-left"></i> Back
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="alert alert-danger"
+     *ngIf="errorMessage">{{errorMessage}}
+</div>
