@@ -22,12 +22,8 @@ export class ProductEditComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(
-      params => {
-        const id = +(params.get('id') || NaN);
-        this.getProduct(id);
-      }
-    );
+    const id = +(this.route.snapshot.paramMap.get('id') || NaN);
+    this.getProduct(id);
   }
 
   getProduct(id: number): void {
