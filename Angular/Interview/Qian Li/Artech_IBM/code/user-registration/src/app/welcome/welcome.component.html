@@ -1,0 +1,116 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="register(loginForm)"
+          #loginForm="ngForm"
+          autocomplete="off">
+      <fieldset>
+
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label"
+                 for="userNameId">Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="userNameId"
+                   type="text"
+                   placeholder="User Name (required)"
+                   required
+                   ngModel
+                   name="userName"
+                   #userNameVar="ngModel"
+                   [ngClass]="{'is-invalid': (userNameVar.touched || userNameVar.dirty) && !userNameVar.valid }" />
+            <span class="invalid-feedback">
+              <span *ngIf="userNameVar.errors?.required">
+                User name is required.
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label"
+                 for="emailId">Email</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="emailId"
+                   type="text"
+                   placeholder="Email (required)"
+                   required
+                   ngModel
+                   name="email"
+                   #emailVar="ngModel"
+                   [ngClass]="{'is-invalid': (emailVar.touched || emailVar.dirty) && !emailVar.valid }" />
+            <span class="invalid-feedback">
+              <span *ngIf="emailVar.errors?.required">
+                Email is required.
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-2 col-form--label"
+                 for="passwordId">Password</label>
+
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="passwordId"
+                   type="password"
+                   placeholder="Password (required)"
+                   required
+                   ngModel
+                   name="password"
+                   #passwordVar="ngModel"
+                   [ngClass]="{'is-invalid': (passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }" />
+            <span class="invalid-feedback">
+              <span *ngIf="passwordVar.errors?.required">
+                Password is required.
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-2 col-form--label"
+                 for="bioId">Bio</label>
+
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="bioId"
+                   type="text"
+                   placeholder="Bio (required)"
+                   required
+                   ngModel
+                   name="bio"
+                   #bioVar="ngModel"
+                   [ngClass]="{'is-invalid': (bioVar.touched || bioVar.dirty) && !bioVar.valid }" />
+            <span class="invalid-feedback">
+              <span *ngIf="bioVar.errors?.required">
+                Bio is required.
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 offset-md-8">
+            <button class="btn btn-primary mr-3"
+                    type="submit"
+                    style="width:100px"
+                    [disabled]="!loginForm.valid">
+              Register
+            </button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

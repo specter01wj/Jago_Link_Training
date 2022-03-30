@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          #loginForm="ngForm"
+          autocomplete="off">
+      <fieldset>
+
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label"
+                 for="userNameId">Name</label>
+          <div class="col-md-8">
+            {{userName}}
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label"
+                 for="emailId">Email</label>
+          <div class="col-md-8">
+            {{email}}
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-2 col-form--label"
+                 for="bioId">Bio</label>
+
+          <div class="col-md-8">
+            {{bio}}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 offset-md-8">
+            <button class="btn btn-outline-secondary"
+                    type="button"
+                    style="width:80px"
+                    (click)="onCancel()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>
