@@ -20,6 +20,8 @@ var welcome_component_1 = require("./home/welcome.component");
 var page_not_found_component_1 = require("./home/page-not-found.component");
 var user_module_1 = require("./user/user.module");
 var store_1 = require("@ngrx/store");
+var store_devtools_1 = require("@ngrx/store-devtools");
+var environment_1 = require("../environments/environment");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -39,6 +41,11 @@ var AppModule = /** @class */ (function () {
                 user_module_1.UserModule,
                 app_routing_module_1.AppRoutingModule,
                 store_1.StoreModule.forRoot({}, {}),
+                store_devtools_1.StoreDevtoolsModule.instrument({
+                    name: 'APM Demo App Devtools',
+                    maxAge: 25,
+                    logOnly: environment_1.environment.production
+                }),
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]
